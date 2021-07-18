@@ -13,11 +13,12 @@ namespace SistemDeEvidenta
 {
     public partial class Elevi : Form
     {
+        public static string CONSTRING = "Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True";
         public Elevi()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True");
+        SqlConnection con = new SqlConnection(CONSTRING);
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Close();

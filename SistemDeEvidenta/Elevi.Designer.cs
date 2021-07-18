@@ -152,7 +152,7 @@
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(150, 31);
             this.label12.TabIndex = 27;
-            this.label12.Text = "Oras";
+            this.label12.Text = "Localitate";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label13
