@@ -28,7 +28,7 @@ namespace SistemDeEvidenta
         {
             if (con.State != ConnectionState.Open)
                 con.Open();
-            SqlCommand cmd = new SqlCommand("select judet from judete", con);
+            SqlCommand cmd = new SqlCommand("select judet from judete order by judet asc", con);
             SqlDataReader rdr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
             dt.Columns.Add("judet", typeof(string));
@@ -73,16 +73,16 @@ namespace SistemDeEvidenta
                 dt.Load(rdr);
                 int idjud=Int32.Parse(dt.Rows[0]["id"].ToString());
                
-                sqr = $"select oras from orase where idjudet={idjud}";
+               /* sqr = $"select oras from orase where idjudet={idjud} order by oras asc";
                 SqlCommand ncmd = new SqlCommand(sqr, con);
                 SqlDataReader nrdr = ncmd.ExecuteReader();
                 DataTable ndt = new DataTable();
                 ndt.Columns.Add("oras", typeof(string));
-                ndt.Load(nrdr);
+               // ndt.Load(nrdr);
                 CBOras.ValueMember = "oras";
                 CBOras.DataSource = ndt;
                 
-
+    */
                 con.Close();
             }
             catch (Exception ee)
