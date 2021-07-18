@@ -95,9 +95,9 @@ namespace SistemDeEvidenta
         {
             TBClasa.Text = "";
             RBMasc.Checked = RBFem.Checked = false;
-            TBNume.Text = TBPrenume.Text = "";
             TBEmail.Text = TBTlf.Text = "";
             TBAdresa.Text = "";
+            TBNume.Text = TBPrenume.Text = "";
             DatePickerNastere.Value = DateTime.Now;
             DateTimeInreg.Value = DateTime.Now;
             PuneJudete();
