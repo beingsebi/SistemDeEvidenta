@@ -126,7 +126,7 @@
             this.CBOras.Location = new System.Drawing.Point(151, 396);
             this.CBOras.Margin = new System.Windows.Forms.Padding(0);
             this.CBOras.Name = "CBOras";
-            this.CBOras.Size = new System.Drawing.Size(178, 29);
+            this.CBOras.Size = new System.Drawing.Size(178, 36);
             this.CBOras.TabIndex = 12;
             // 
             // CBJudet
@@ -138,9 +138,8 @@
             this.CBJudet.Location = new System.Drawing.Point(151, 342);
             this.CBJudet.Margin = new System.Windows.Forms.Padding(0);
             this.CBJudet.Name = "CBJudet";
-            this.CBJudet.Size = new System.Drawing.Size(178, 29);
+            this.CBJudet.Size = new System.Drawing.Size(178, 36);
             this.CBJudet.TabIndex = 11;
-            this.CBJudet.SelectedIndexChanged += new System.EventHandler(this.CBJudet_SelectedIndexChanged);
             this.CBJudet.SelectionChangeCommitted += new System.EventHandler(this.CBJudet_SelectionChangeCommitted);
             // 
             // label12
@@ -187,9 +186,9 @@
             this.DateTimeInreg.Location = new System.Drawing.Point(445, 288);
             this.DateTimeInreg.Margin = new System.Windows.Forms.Padding(0);
             this.DateTimeInreg.MaxDate = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
-            this.DateTimeInreg.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
+            this.DateTimeInreg.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.DateTimeInreg.Name = "DateTimeInreg";
-            this.DateTimeInreg.Size = new System.Drawing.Size(148, 29);
+            this.DateTimeInreg.Size = new System.Drawing.Size(148, 33);
             this.DateTimeInreg.TabIndex = 10;
             // 
             // label10
@@ -208,13 +207,13 @@
             // 
             this.DatePickerNastere.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.DatePickerNastere.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DatePickerNastere.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DatePickerNastere.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.DatePickerNastere.Location = new System.Drawing.Point(151, 288);
             this.DatePickerNastere.Margin = new System.Windows.Forms.Padding(0);
             this.DatePickerNastere.MaxDate = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
             this.DatePickerNastere.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.DatePickerNastere.Name = "DatePickerNastere";
-            this.DatePickerNastere.Size = new System.Drawing.Size(148, 29);
+            this.DatePickerNastere.Size = new System.Drawing.Size(148, 33);
             this.DatePickerNastere.TabIndex = 9;
             // 
             // TBAdresa
