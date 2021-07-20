@@ -43,10 +43,6 @@ namespace SistemDeEvidenta
         }
         private void Elevi_Load(object sender, EventArgs e)
         {
-           /* DatePickerNastere.Format = DateTimePickerFormat.Custom;
-            DatePickerNastere.CustomFormat = "MM-dd-yyyy";
-            DateTimeInreg.Format = DateTimePickerFormat.Custom;
-            DateTimeInreg.CustomFormat = "MM-dd-yyyy";*/
             try
             {
                 PuneJudete();
@@ -382,5 +378,82 @@ namespace SistemDeEvidenta
             }
         }
 
+        private void BCautare_Click(object sender, EventArgs e)
+        {
+             var mmap = new Dictionary<string, string>(){
+    { "Nume", "nume" },
+    { "Prenume", "prenume" },
+    { "Clasa", "clasa" },
+    { "Nr. Tlf.", "nrtlf" },
+    { "Email", "email" },
+    { "Judet", "judet" },
+    { "Adresa", "adresa" },
+    { "Sex", "sex" },
+    { "Oras", "oras" }};
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                if (string.IsNullOrEmpty(CBCriteriu.Text) || CBCriteriu.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Nu ati ales criteriu de cautare","Eroare",MessageBoxButtons.OK);
+                    return;
+                }
+                if (string.IsNullOrEmpty(TBCriteriu.Text))
+                {
+                    MessageBox.Show("Nu ati introdus date de cautare", "Eroare", MessageBoxButtons.OK);
+                    return;
+                }
+
+                SqlDataAdapter adp = new SqlDataAdapter($"select id, nume as 'Nume',prenume as 'Prenume',clasa as 'Clasa',nrtlf as 'Nr. de tlf.',email as 'Email',judet as 'Judet',oras as 'Oras',adresa as 'Adresa'" +
+                    $",sex as 'Sex',dnastere as 'Data de nastere',dinregistrare as 'Data de inregistrare' from elevi where {mmap[CBCriteriu.Text]}=@val", con);
+
+                adp.SelectCommand.Parameters.AddWithValue("@val", TBCriteriu.Text);
+                System.Data.DataTable tabel = new System.Data.DataTable();
+                adp.Fill(tabel);
+                con.Close();
+                DGVCriteriu.DataSource = tabel;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
+
+        private void DGVCriteriu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int ind = e.RowIndex;
+            if (ind < 0) return;
+            LElev.Text = DGVCriteriu.Rows[ind].Cells[0].Value.ToString();
+        }
+
+        private void Bstergere_Click(object sender, EventArgs e)
+        {
+            string text = LElev.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("Nu ati selectat niciun elev.", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            try
+            {
+                int id = Int16.Parse(LElev.Text);
+                DialogResult dr = MessageBox.Show($"Stergeti userul cu id-ul {id}?", "Confirmare", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+                    SqlCommand cmd = new SqlCommand($"delete from elevi where id={id}", con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Stergere reusita");
+                    BCautare_Click(this, EventArgs.Empty);
+                    con.Close();
+                }
+            }
+            catch(Exception es)
+            {
+                MessageBox.Show(es.ToString());
+            }
+        }
     }
 }
