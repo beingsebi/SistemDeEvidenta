@@ -179,7 +179,7 @@
             this.CBCriteriu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCriteriu.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCriteriu.FormattingEnabled = true;
-            this.CBCriteriu.ItemHeight = 21;
+            this.CBCriteriu.ItemHeight = 17;
             this.CBCriteriu.Items.AddRange(new object[] {
             "Nume",
             "Prenume",
@@ -193,7 +193,7 @@
             this.CBCriteriu.Location = new System.Drawing.Point(0, 0);
             this.CBCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.CBCriteriu.Name = "CBCriteriu";
-            this.CBCriteriu.Size = new System.Drawing.Size(200, 29);
+            this.CBCriteriu.Size = new System.Drawing.Size(200, 25);
             this.CBCriteriu.TabIndex = 0;
             this.CBCriteriu.TabStop = false;
             // 
@@ -298,7 +298,7 @@
             this.CBOras.Location = new System.Drawing.Point(234, 398);
             this.CBOras.Margin = new System.Windows.Forms.Padding(0);
             this.CBOras.Name = "CBOras";
-            this.CBOras.Size = new System.Drawing.Size(178, 36);
+            this.CBOras.Size = new System.Drawing.Size(178, 29);
             this.CBOras.TabIndex = 12;
             // 
             // CBJudet
@@ -310,7 +310,7 @@
             this.CBJudet.Location = new System.Drawing.Point(234, 344);
             this.CBJudet.Margin = new System.Windows.Forms.Padding(0);
             this.CBJudet.Name = "CBJudet";
-            this.CBJudet.Size = new System.Drawing.Size(178, 36);
+            this.CBJudet.Size = new System.Drawing.Size(178, 29);
             this.CBJudet.TabIndex = 11;
             this.CBJudet.SelectionChangeCommitted += new System.EventHandler(this.CBJudet_SelectionChangeCommitted);
             // 
@@ -360,7 +360,7 @@
             this.DateTimeInreg.MaxDate = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
             this.DateTimeInreg.MinDate = new System.DateTime(2000, 1, 1, 0, 0, 0, 0);
             this.DateTimeInreg.Name = "DateTimeInreg";
-            this.DateTimeInreg.Size = new System.Drawing.Size(148, 33);
+            this.DateTimeInreg.Size = new System.Drawing.Size(148, 29);
             this.DateTimeInreg.TabIndex = 10;
             // 
             // label10
@@ -385,7 +385,7 @@
             this.DatePickerNastere.MaxDate = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
             this.DatePickerNastere.MinDate = new System.DateTime(1990, 1, 1, 0, 0, 0, 0);
             this.DatePickerNastere.Name = "DatePickerNastere";
-            this.DatePickerNastere.Size = new System.Drawing.Size(148, 33);
+            this.DatePickerNastere.Size = new System.Drawing.Size(148, 29);
             this.DatePickerNastere.TabIndex = 9;
             // 
             // TBAdresa
@@ -678,7 +678,7 @@
             this.BGolire.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BGolire.Image = ((System.Drawing.Image)(resources.GetObject("BGolire.Image")));
             this.BGolire.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BGolire.Location = new System.Drawing.Point(30, 61);
+            this.BGolire.Location = new System.Drawing.Point(30, 68);
             this.BGolire.Margin = new System.Windows.Forms.Padding(0);
             this.BGolire.Name = "BGolire";
             this.BGolire.Size = new System.Drawing.Size(170, 40);

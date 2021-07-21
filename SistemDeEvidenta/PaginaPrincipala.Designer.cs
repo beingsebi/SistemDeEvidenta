@@ -127,6 +127,7 @@
             this.BProfesori.Text = "Profesori";
             this.BProfesori.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BProfesori.UseVisualStyleBackColor = false;
+            this.BProfesori.Click += new System.EventHandler(this.BProfesori_Click);
             // 
             // BElevi
             // 
@@ -165,7 +166,7 @@
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(828, 444);
+            this.ClientSize = new System.Drawing.Size(832, 453);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -175,7 +176,6 @@
             this.Name = "FereastraPrincipala";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Sistem Scolar De Inregistrare";
-            this.Load += new System.EventHandler(this.FereastraPrincipala_Load);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

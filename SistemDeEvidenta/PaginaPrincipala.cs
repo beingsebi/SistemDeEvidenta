@@ -17,18 +17,19 @@ namespace SistemDeEvidenta
         {
             InitializeComponent();
         }
-
-        private void FereastraPrincipala_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-         
+        
         private void BElevi_Click(object sender, EventArgs e)
         {
             this.Hide();
             Elevi form2 = new Elevi();
             form2.Show();
     }
+
+        private void BProfesori_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Profesori form2 = new Profesori();
+            form2.Show();
+        }
     }
 }

@@ -10,11 +10,12 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 using System.Diagnostics;
+
 namespace SistemDeEvidenta
 {
     public partial class Elevi : Form
     {
-        public static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
+        public static string CONSTRING = "Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True";
         public Elevi()
         {
             InitializeComponent();
@@ -94,102 +95,13 @@ namespace SistemDeEvidenta
             TBNume.Text = TBPrenume.Text = "";
             DatePickerNastere.Value = DateTime.Now;
             DateTimeInreg.Value = DateTime.Now;
+            LElev.Text = "";
             PuneJudete();
             
-        }
-        public bool VerifClasa()
-        {
-            string text = TBClasa.Text;
-            if (text.Length == 0 || text.Length > 2)
-                return false;
-            for (int i = 0; i < text.Length; i++)
-                if (!Char.IsDigit(text[i]))
-                    return false;
-            if (text[0] == '0')
-                return false;
-            int nr = Int32.Parse(text);
-            if (nr < 1 || nr > 12)
-                return false;
-            return true;
         }
         public bool VerifSex()
         {
             if (!RBMasc.Checked && !RBFem.Checked)
-                return false;
-            return true;
-        }
-        public bool VerifNume()
-        {
-            string text = TBNume.Text;
-            if (text.Length < 3) return false;
-            for (int i = 0; i < text.Length; i++)
-                if (!Char.IsLetter(text[i]))
-                    return false;
-            return true;
-        }
-        public bool VerifPrenume()
-        {
-            string text = TBPrenume.Text;
-            if (text.Length < 3) return false;
-            for (int i = 0; i < text.Length; i++)
-                if (!Char.IsLetter(text[i]))
-                    return false;
-            return true;
-        }
-        public bool VerifEmail()
-        {
-            string text = TBEmail.Text;
-            if (text.Length < 7)
-                return false;
-            int ap = 0, ar = 0;
-            for(int i=0;i<text.Length;i++)
-            {
-                if (text[i] == '@')
-                    ar++;
-                if (text[i] == '.')
-                    ap++;
-            }
-            if (ar != 1 || ap != 1)
-                return false;
-            return true;
-        }
-        public bool VerifNrtlf()
-        {
-            string text = TBTlf.Text;
-            if (text.Length != 10) return false;
-            for (int i = 0; i < 10; i++)
-                if (!Char.IsDigit(text[i]))
-                    return false;
-            return true;
-        }
-        public bool VerifAdresa()
-        {
-            int cnt = 0;
-            for (int i = 0; i < TBAdresa.Text.Length; i++)
-                if (Char.IsLetter(TBAdresa.Text[i]))
-                    cnt++;
-            if (cnt < 4) return false;
-            return true;
-        }
-        public bool VerifNastere()
-        {
-            if (DatePickerNastere.Text.Length == 0 || DatePickerNastere.Value == null) return false;
-            return true;
-        }
-        public bool VerifInreg()
-        {
-            if (DateTimeInreg.Text.Length == 0 || DateTimeInreg.Value == null) return false;
-            return true;
-        }
-        public bool VerifJudet()
-        {
-            if (string.IsNullOrEmpty(CBJudet.Text) || CBJudet.SelectedIndex == -1)
-                return false;
-            return true;
-        }
-        public bool VerifOras()
-        {
-            if (string.IsNullOrEmpty(CBOras.Text) || CBOras.SelectedIndex == -1)
                 return false;
             return true;
         }
@@ -223,7 +135,7 @@ namespace SistemDeEvidenta
         }
         public bool ValidareDate()
         {
-            if (!VerifClasa())
+            if (!ClasaValidareDate.VerifClasa(TBClasa.Text))
             {
                 MessageBox.Show("Clasa invalida.", "Eroare", MessageBoxButtons.OK);
                 return false;
@@ -233,47 +145,47 @@ namespace SistemDeEvidenta
                 MessageBox.Show("Nu ati introdus sexul.", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifNume())
+            if (!ClasaValidareDate.VerifNume(TBNume.Text))
             {
                 MessageBox.Show("Nume invalid", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifPrenume())
+            if (!ClasaValidareDate.VerifPrenume(TBPrenume.Text))
             {
                 MessageBox.Show("Prenume invalid", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifEmail())
+            if (!ClasaValidareDate.VerifEmail(TBEmail.Text))
             {
                 MessageBox.Show("Email invalid", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifNrtlf())
+            if (!ClasaValidareDate.VerifNrtlf(TBTlf.Text))
             {
                 MessageBox.Show("Numar de telefon invalid", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifAdresa())
+            if (!ClasaValidareDate.VerifAdresa(TBAdresa.Text))
             {
                 MessageBox.Show("Adresa invalida", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifNastere())
+            if (!ClasaValidareDate.VerifData(DatePickerNastere))
             {
                 MessageBox.Show("Data de nastere invalida", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifInreg())
+            if (!ClasaValidareDate.VerifData(DateTimeInreg))
             {
                 MessageBox.Show("Data de Inregistrare invalida", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifJudet())
+            if (!ClasaValidareDate.VerifCB(CBJudet))
             {
                 MessageBox.Show("Judet invalid", "Eroare", MessageBoxButtons.OK);
                 return false;
             }
-            if (!VerifOras())
+            if (!ClasaValidareDate.VerifCB(CBOras))
             {
                 MessageBox.Show("Oras invalid", "Eroare", MessageBoxButtons.OK);
                 return false;
@@ -375,6 +287,7 @@ namespace SistemDeEvidenta
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Adaugare reusita.", "OK", MessageBoxButtons.OK);
+                BDate_Click(this, EventArgs.Empty);
                 BGolire_Click(this, EventArgs.Empty);
             }
             catch (Exception ee)

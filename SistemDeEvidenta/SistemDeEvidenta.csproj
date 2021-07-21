@@ -85,19 +85,29 @@
     <Compile Include="Elevi.Designer.cs">
       <DependentUpon>Elevi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Profesori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Profesori.Designer.cs">
+      <DependentUpon>Profesori.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaginaPrincipala.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaginaPrincipala.Designer.cs">
+      <DependentUpon>PaginaPrincipala.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ClasaValidareDate.cs" />
     <EmbeddedResource Include="Elevi.resx">
       <DependentUpon>Elevi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Profesori.resx">
+      <DependentUpon>Profesori.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaginaPrincipala.resx">
+      <DependentUpon>PaginaPrincipala.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
