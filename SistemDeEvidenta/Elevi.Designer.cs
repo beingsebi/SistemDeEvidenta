@@ -67,16 +67,16 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.BDate = new System.Windows.Forms.Button();
-            this.Bstergere = new System.Windows.Forms.Button();
-            this.BActualizare = new System.Windows.Forms.Button();
-            this.BAdaugare = new System.Windows.Forms.Button();
-            this.BGolire = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
             this.LElev = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.BDate = new System.Windows.Forms.Button();
+            this.BGolire = new System.Windows.Forms.Button();
+            this.Bstergere = new System.Windows.Forms.Button();
+            this.BAdaugare = new System.Windows.Forms.Button();
+            this.BActualizare = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -87,8 +87,8 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCriteriu)).BeginInit();
             this.panel2.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -195,6 +195,7 @@
             this.CBCriteriu.Name = "CBCriteriu";
             this.CBCriteriu.Size = new System.Drawing.Size(200, 29);
             this.CBCriteriu.TabIndex = 0;
+            this.CBCriteriu.TabStop = false;
             // 
             // panel8
             // 
@@ -216,6 +217,7 @@
             this.TBCriteriu.Name = "TBCriteriu";
             this.TBCriteriu.Size = new System.Drawing.Size(200, 65);
             this.TBCriteriu.TabIndex = 0;
+            this.TBCriteriu.TabStop = false;
             // 
             // panel7
             // 
@@ -238,6 +240,7 @@
             this.BCautare.Name = "BCautare";
             this.BCautare.Size = new System.Drawing.Size(200, 25);
             this.BCautare.TabIndex = 0;
+            this.BCautare.TabStop = false;
             this.BCautare.Text = "Cautare";
             this.BCautare.UseVisualStyleBackColor = false;
             this.BCautare.Click += new System.EventHandler(this.BCautare_Click);
@@ -269,6 +272,7 @@
             this.DGVCriteriu.RowTemplate.Height = 28;
             this.DGVCriteriu.Size = new System.Drawing.Size(550, 112);
             this.DGVCriteriu.TabIndex = 0;
+            this.DGVCriteriu.TabStop = false;
             this.DGVCriteriu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCriteriu_CellDoubleClick);
             // 
             // BBack
@@ -281,6 +285,7 @@
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(53, 43);
             this.BBack.TabIndex = 28;
+            this.BBack.TabStop = false;
             this.BBack.UseVisualStyleBackColor = false;
             this.BBack.Click += new System.EventHandler(this.BBack_Click);
             // 
@@ -585,6 +590,67 @@
             this.panel2.Size = new System.Drawing.Size(231, 601);
             this.panel2.TabIndex = 1;
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.LElev);
+            this.panel11.Controls.Add(this.label14);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(0, 434);
+            this.panel11.Margin = new System.Windows.Forms.Padding(0);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(231, 167);
+            this.panel11.TabIndex = 7;
+            // 
+            // LElev
+            // 
+            this.LElev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LElev.Font = new System.Drawing.Font("Nirmala UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LElev.Location = new System.Drawing.Point(23, 47);
+            this.LElev.Name = "LElev";
+            this.LElev.Size = new System.Drawing.Size(177, 72);
+            this.LElev.TabIndex = 1;
+            this.LElev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, -1);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(225, 47);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "ID ELEV SELECTAT";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.label1);
+            this.panel10.Controls.Add(this.BDate);
+            this.panel10.Controls.Add(this.BGolire);
+            this.panel10.Controls.Add(this.Bstergere);
+            this.panel10.Controls.Add(this.BAdaugare);
+            this.panel10.Controls.Add(this.BActualizare);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel10.Location = new System.Drawing.Point(0, 0);
+            this.panel10.Margin = new System.Windows.Forms.Padding(0);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(231, 434);
+            this.panel10.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(15, 6);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(194, 62);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Procesare";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // BDate
             // 
             this.BDate.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -602,62 +668,7 @@
             this.BDate.Text = "Date";
             this.BDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BDate.UseVisualStyleBackColor = false;
-            // 
-            // Bstergere
-            // 
-            this.Bstergere.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.Bstergere.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.Bstergere.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.Bstergere.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Bstergere.Image = ((System.Drawing.Image)(resources.GetObject("Bstergere.Image")));
-            this.Bstergere.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Bstergere.Location = new System.Drawing.Point(30, 271);
-            this.Bstergere.Margin = new System.Windows.Forms.Padding(0);
-            this.Bstergere.Name = "Bstergere";
-            this.Bstergere.Size = new System.Drawing.Size(170, 40);
-            this.Bstergere.TabIndex = 4;
-            this.Bstergere.TabStop = false;
-            this.Bstergere.Text = "Stergere";
-            this.Bstergere.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Bstergere.UseVisualStyleBackColor = false;
-            this.Bstergere.Click += new System.EventHandler(this.Bstergere_Click);
-            // 
-            // BActualizare
-            // 
-            this.BActualizare.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BActualizare.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BActualizare.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.BActualizare.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BActualizare.Image = ((System.Drawing.Image)(resources.GetObject("BActualizare.Image")));
-            this.BActualizare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BActualizare.Location = new System.Drawing.Point(30, 201);
-            this.BActualizare.Margin = new System.Windows.Forms.Padding(0);
-            this.BActualizare.Name = "BActualizare";
-            this.BActualizare.Size = new System.Drawing.Size(170, 40);
-            this.BActualizare.TabIndex = 3;
-            this.BActualizare.TabStop = false;
-            this.BActualizare.Text = "Actualizare";
-            this.BActualizare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BActualizare.UseVisualStyleBackColor = false;
-            // 
-            // BAdaugare
-            // 
-            this.BAdaugare.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.BAdaugare.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BAdaugare.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.BAdaugare.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BAdaugare.Image = ((System.Drawing.Image)(resources.GetObject("BAdaugare.Image")));
-            this.BAdaugare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BAdaugare.Location = new System.Drawing.Point(30, 131);
-            this.BAdaugare.Margin = new System.Windows.Forms.Padding(0);
-            this.BAdaugare.Name = "BAdaugare";
-            this.BAdaugare.Size = new System.Drawing.Size(170, 40);
-            this.BAdaugare.TabIndex = 2;
-            this.BAdaugare.TabStop = false;
-            this.BAdaugare.Text = "Adaugare";
-            this.BAdaugare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BAdaugare.UseVisualStyleBackColor = false;
-            this.BAdaugare.Click += new System.EventHandler(this.BAdaugare_Click);
+            this.BDate.Click += new System.EventHandler(this.BDate_Click);
             // 
             // BGolire
             // 
@@ -678,66 +689,62 @@
             this.BGolire.UseVisualStyleBackColor = false;
             this.BGolire.Click += new System.EventHandler(this.BGolire_Click);
             // 
-            // label1
+            // Bstergere
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(15, 6);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(194, 62);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Procesare";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Bstergere.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Bstergere.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.Bstergere.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.Bstergere.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Bstergere.Image = ((System.Drawing.Image)(resources.GetObject("Bstergere.Image")));
+            this.Bstergere.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Bstergere.Location = new System.Drawing.Point(30, 271);
+            this.Bstergere.Margin = new System.Windows.Forms.Padding(0);
+            this.Bstergere.Name = "Bstergere";
+            this.Bstergere.Size = new System.Drawing.Size(170, 40);
+            this.Bstergere.TabIndex = 4;
+            this.Bstergere.TabStop = false;
+            this.Bstergere.Text = "Stergere";
+            this.Bstergere.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Bstergere.UseVisualStyleBackColor = false;
+            this.Bstergere.Click += new System.EventHandler(this.Bstergere_Click);
             // 
-            // panel10
+            // BAdaugare
             // 
-            this.panel10.Controls.Add(this.label1);
-            this.panel10.Controls.Add(this.BDate);
-            this.panel10.Controls.Add(this.BGolire);
-            this.panel10.Controls.Add(this.Bstergere);
-            this.panel10.Controls.Add(this.BAdaugare);
-            this.panel10.Controls.Add(this.BActualizare);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel10.Location = new System.Drawing.Point(0, 0);
-            this.panel10.Margin = new System.Windows.Forms.Padding(0);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(231, 434);
-            this.panel10.TabIndex = 6;
+            this.BAdaugare.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BAdaugare.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BAdaugare.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BAdaugare.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAdaugare.Image = ((System.Drawing.Image)(resources.GetObject("BAdaugare.Image")));
+            this.BAdaugare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BAdaugare.Location = new System.Drawing.Point(30, 131);
+            this.BAdaugare.Margin = new System.Windows.Forms.Padding(0);
+            this.BAdaugare.Name = "BAdaugare";
+            this.BAdaugare.Size = new System.Drawing.Size(170, 40);
+            this.BAdaugare.TabIndex = 2;
+            this.BAdaugare.TabStop = false;
+            this.BAdaugare.Text = "Adaugare";
+            this.BAdaugare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BAdaugare.UseVisualStyleBackColor = false;
+            this.BAdaugare.Click += new System.EventHandler(this.BAdaugare_Click);
             // 
-            // panel11
+            // BActualizare
             // 
-            this.panel11.Controls.Add(this.LElev);
-            this.panel11.Controls.Add(this.label14);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 434);
-            this.panel11.Margin = new System.Windows.Forms.Padding(0);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(231, 167);
-            this.panel11.TabIndex = 7;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(6, -1);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(225, 47);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "ID ELEV SELECTAT";
-            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LElev
-            // 
-            this.LElev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LElev.Font = new System.Drawing.Font("Nirmala UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LElev.Location = new System.Drawing.Point(23, 47);
-            this.LElev.Name = "LElev";
-            this.LElev.Size = new System.Drawing.Size(177, 72);
-            this.LElev.TabIndex = 1;
-            this.LElev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BActualizare.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BActualizare.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BActualizare.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.BActualizare.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BActualizare.Image = ((System.Drawing.Image)(resources.GetObject("BActualizare.Image")));
+            this.BActualizare.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BActualizare.Location = new System.Drawing.Point(30, 201);
+            this.BActualizare.Margin = new System.Windows.Forms.Padding(0);
+            this.BActualizare.Name = "BActualizare";
+            this.BActualizare.Size = new System.Drawing.Size(170, 40);
+            this.BActualizare.TabIndex = 3;
+            this.BActualizare.TabStop = false;
+            this.BActualizare.Text = "Actualizare";
+            this.BActualizare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BActualizare.UseVisualStyleBackColor = false;
+            this.BActualizare.Click += new System.EventHandler(this.BActualizare_Click);
             // 
             // Elevi
             // 
@@ -753,6 +760,7 @@
             this.Name = "Elevi";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Elevi";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Elevi_FormClosing);
             this.Load += new System.EventHandler(this.Elevi_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -766,8 +774,8 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVCriteriu)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
+            this.panel10.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

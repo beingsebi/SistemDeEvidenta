@@ -12,7 +12,6 @@ namespace SistemDeEvidenta
 {
     public partial class FereastraPrincipala : Form
     {
-        public Elevi form2 = new Elevi();
 
         public FereastraPrincipala()
         {
@@ -24,10 +23,12 @@ namespace SistemDeEvidenta
             
         }
 
+         
         private void BElevi_Click(object sender, EventArgs e)
         {
             this.Hide();
+            Elevi form2 = new Elevi();
             form2.Show();
-        }
+    }
     }
 }
