@@ -15,7 +15,7 @@ namespace SistemDeEvidenta
 {
     public partial class Elevi : Form
     {
-        public static string CONSTRING = "Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True";
+        public static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
         public Elevi()
         {
             InitializeComponent();
@@ -38,7 +38,6 @@ namespace SistemDeEvidenta
             CBJudet.ValueMember = "judet";
             CBJudet.DataSource = dt;
             con.Close();
-
             CBJudet_SelectionChangeCommitted(this,EventArgs.Empty);
         }
         private void Elevi_Load(object sender, EventArgs e)
@@ -46,6 +45,8 @@ namespace SistemDeEvidenta
             try
             {
                 PuneJudete();
+                CBJudet.SelectedIndex = -1;
+                CBOras.SelectedIndex = -1;
             }
             catch (Exception ee)
             {
@@ -67,8 +68,8 @@ namespace SistemDeEvidenta
                 DataTable dt = new DataTable();
                 dt.Columns.Add("id", typeof(int));
                 dt.Load(rdr);
-                int idjud=Int32.Parse(dt.Rows[0]["id"].ToString());
-               
+                int idjud = Int32.Parse(dt.Rows[0]["id"].ToString());
+
                 sqr = $"select oras from orase where idjudet={idjud} order by oras asc";
                 SqlCommand ncmd = new SqlCommand(sqr, con);
                 SqlDataReader nrdr = ncmd.ExecuteReader();
@@ -77,7 +78,7 @@ namespace SistemDeEvidenta
                 ndt.Load(nrdr);
                 CBOras.ValueMember = "oras";
                 CBOras.DataSource = ndt;
-             
+
                 con.Close();
             }
             catch (Exception ee)
@@ -96,15 +97,17 @@ namespace SistemDeEvidenta
             DatePickerNastere.Value = DateTime.Now;
             DateTimeInreg.Value = DateTime.Now;
             LElev.Text = "";
-            PuneJudete();
+            try
+            {
+                PuneJudete();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
             
         }
-        public bool VerifSex()
-        {
-            if (!RBMasc.Checked && !RBFem.Checked)
-                return false;
-            return true;
-        }
+       
         public int GetIdOras()
         {
             string oras = CBOras.Text;
@@ -132,6 +135,12 @@ namespace SistemDeEvidenta
             dt.Load(rdr);
             int id = Int32.Parse(dt.Rows[0]["id"].ToString());
             return id;
+        }
+        public bool VerifSex()
+        {
+            if (!RBMasc.Checked && !RBFem.Checked)
+                return false;
+            return true;
         }
         public bool ValidareDate()
         {
