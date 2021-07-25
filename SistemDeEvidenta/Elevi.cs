@@ -15,7 +15,7 @@ namespace SistemDeEvidenta
 {
     public partial class Elevi : Form
     {
-        public static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
+        public static string CONSTRING = "Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True";
         public Elevi()
         {
             InitializeComponent();

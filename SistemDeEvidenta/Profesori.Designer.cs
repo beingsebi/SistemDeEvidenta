@@ -101,7 +101,7 @@
             this.DatePickerNastere.MaxDate = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
             this.DatePickerNastere.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.DatePickerNastere.Name = "DatePickerNastere";
-            this.DatePickerNastere.Size = new System.Drawing.Size(130, 33);
+            this.DatePickerNastere.Size = new System.Drawing.Size(130, 29);
             this.DatePickerNastere.TabIndex = 9;
             // 
             // label9
@@ -193,7 +193,7 @@
             this.CBOras.Location = new System.Drawing.Point(266, 404);
             this.CBOras.Margin = new System.Windows.Forms.Padding(0);
             this.CBOras.Name = "CBOras";
-            this.CBOras.Size = new System.Drawing.Size(156, 36);
+            this.CBOras.Size = new System.Drawing.Size(156, 29);
             this.CBOras.TabIndex = 12;
             // 
             // CBJudet
@@ -205,7 +205,7 @@
             this.CBJudet.Location = new System.Drawing.Point(266, 347);
             this.CBJudet.Margin = new System.Windows.Forms.Padding(0);
             this.CBJudet.Name = "CBJudet";
-            this.CBJudet.Size = new System.Drawing.Size(156, 36);
+            this.CBJudet.Size = new System.Drawing.Size(156, 29);
             this.CBJudet.TabIndex = 11;
             this.CBJudet.SelectionChangeCommitted += new System.EventHandler(this.CBJudet_SelectionChangeCommitted);
             // 
@@ -419,7 +419,7 @@
             this.CBCriteriu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCriteriu.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCriteriu.FormattingEnabled = true;
-            this.CBCriteriu.ItemHeight = 21;
+            this.CBCriteriu.ItemHeight = 17;
             this.CBCriteriu.Items.AddRange(new object[] {
             "Nume",
             "Prenume",
@@ -434,7 +434,7 @@
             this.CBCriteriu.Location = new System.Drawing.Point(0, 0);
             this.CBCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.CBCriteriu.Name = "CBCriteriu";
-            this.CBCriteriu.Size = new System.Drawing.Size(175, 29);
+            this.CBCriteriu.Size = new System.Drawing.Size(175, 25);
             this.CBCriteriu.TabIndex = 0;
             this.CBCriteriu.TabStop = false;
             // 
@@ -593,9 +593,8 @@
             "Grad 3"});
             this.CBExperienta.Location = new System.Drawing.Point(523, 291);
             this.CBExperienta.Margin = new System.Windows.Forms.Padding(0);
-            this.CBExperienta.MinimumSize = new System.Drawing.Size(850, 0);
             this.CBExperienta.Name = "CBExperienta";
-            this.CBExperienta.Size = new System.Drawing.Size(850, 36);
+            this.CBExperienta.Size = new System.Drawing.Size(130, 29);
             this.CBExperienta.TabIndex = 31;
             // 
             // CBMaterii
@@ -607,7 +606,7 @@
             this.CBMaterii.Location = new System.Drawing.Point(266, 45);
             this.CBMaterii.Margin = new System.Windows.Forms.Padding(0);
             this.CBMaterii.Name = "CBMaterii";
-            this.CBMaterii.Size = new System.Drawing.Size(156, 36);
+            this.CBMaterii.Size = new System.Drawing.Size(156, 29);
             this.CBMaterii.TabIndex = 30;
             // 
             // TBEmail
@@ -743,7 +742,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.Font = new System.Drawing.Font("Nirmala UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(253, -19);
+            this.label2.Location = new System.Drawing.Point(253, -10);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(171, 71);
@@ -753,12 +752,14 @@
             // 
             // Profesori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 594);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Nirmala UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaximumSize = new System.Drawing.Size(1000, 700);
+            this.MinimumSize = new System.Drawing.Size(900, 620);
             this.Name = "Profesori";
             this.Text = "Profesori";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Profesori_FormClosing);
