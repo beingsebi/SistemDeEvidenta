@@ -45,7 +45,7 @@
             this.TBAdresa = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
-            this.LElev = new System.Windows.Forms.Label();
+            this.LProf = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.BActualizare = new System.Windows.Forms.Button();
@@ -101,7 +101,7 @@
             this.DatePickerNastere.MaxDate = new System.DateTime(2029, 12, 25, 23, 59, 59, 0);
             this.DatePickerNastere.MinDate = new System.DateTime(1950, 1, 1, 0, 0, 0, 0);
             this.DatePickerNastere.Name = "DatePickerNastere";
-            this.DatePickerNastere.Size = new System.Drawing.Size(130, 29);
+            this.DatePickerNastere.Size = new System.Drawing.Size(130, 33);
             this.DatePickerNastere.TabIndex = 9;
             // 
             // label9
@@ -145,6 +145,7 @@
             this.BDate.Text = "Date";
             this.BDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BDate.UseVisualStyleBackColor = false;
+            this.BDate.Click += new System.EventHandler(this.BDate_Click);
             // 
             // BGolire
             // 
@@ -193,7 +194,7 @@
             this.CBOras.Location = new System.Drawing.Point(266, 404);
             this.CBOras.Margin = new System.Windows.Forms.Padding(0);
             this.CBOras.Name = "CBOras";
-            this.CBOras.Size = new System.Drawing.Size(156, 29);
+            this.CBOras.Size = new System.Drawing.Size(156, 36);
             this.CBOras.TabIndex = 12;
             // 
             // CBJudet
@@ -205,7 +206,7 @@
             this.CBJudet.Location = new System.Drawing.Point(266, 347);
             this.CBJudet.Margin = new System.Windows.Forms.Padding(0);
             this.CBJudet.Name = "CBJudet";
-            this.CBJudet.Size = new System.Drawing.Size(156, 29);
+            this.CBJudet.Size = new System.Drawing.Size(156, 36);
             this.CBJudet.TabIndex = 11;
             this.CBJudet.SelectionChangeCommitted += new System.EventHandler(this.CBJudet_SelectionChangeCommitted);
             // 
@@ -304,7 +305,7 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel11.Controls.Add(this.LElev);
+            this.panel11.Controls.Add(this.LProf);
             this.panel11.Controls.Add(this.label14);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(0, 461);
@@ -313,16 +314,16 @@
             this.panel11.Size = new System.Drawing.Size(202, 140);
             this.panel11.TabIndex = 7;
             // 
-            // LElev
+            // LProf
             // 
-            this.LElev.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LProf.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LElev.Font = new System.Drawing.Font("Nirmala UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LElev.Location = new System.Drawing.Point(20, 71);
-            this.LElev.Name = "LElev";
-            this.LElev.Size = new System.Drawing.Size(155, 56);
-            this.LElev.TabIndex = 1;
-            this.LElev.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LProf.Font = new System.Drawing.Font("Nirmala UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LProf.Location = new System.Drawing.Point(20, 71);
+            this.LProf.Name = "LProf";
+            this.LProf.Size = new System.Drawing.Size(155, 56);
+            this.LProf.TabIndex = 1;
+            this.LProf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label14
             // 
@@ -369,6 +370,7 @@
             this.BActualizare.Text = "Actualizare";
             this.BActualizare.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BActualizare.UseVisualStyleBackColor = false;
+            this.BActualizare.Click += new System.EventHandler(this.BActualizare_Click);
             // 
             // panel3
             // 
@@ -419,7 +421,7 @@
             this.CBCriteriu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBCriteriu.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBCriteriu.FormattingEnabled = true;
-            this.CBCriteriu.ItemHeight = 17;
+            this.CBCriteriu.ItemHeight = 21;
             this.CBCriteriu.Items.AddRange(new object[] {
             "Nume",
             "Prenume",
@@ -434,7 +436,7 @@
             this.CBCriteriu.Location = new System.Drawing.Point(0, 0);
             this.CBCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.CBCriteriu.Name = "CBCriteriu";
-            this.CBCriteriu.Size = new System.Drawing.Size(175, 25);
+            this.CBCriteriu.Size = new System.Drawing.Size(175, 29);
             this.CBCriteriu.TabIndex = 0;
             this.CBCriteriu.TabStop = false;
             // 
@@ -514,6 +516,7 @@
             this.DGVCriteriu.Size = new System.Drawing.Size(603, 119);
             this.DGVCriteriu.TabIndex = 0;
             this.DGVCriteriu.TabStop = false;
+            this.DGVCriteriu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCriteriu_CellDoubleClick);
             // 
             // BBack
             // 
@@ -594,7 +597,7 @@
             this.CBExperienta.Location = new System.Drawing.Point(523, 291);
             this.CBExperienta.Margin = new System.Windows.Forms.Padding(0);
             this.CBExperienta.Name = "CBExperienta";
-            this.CBExperienta.Size = new System.Drawing.Size(130, 29);
+            this.CBExperienta.Size = new System.Drawing.Size(130, 36);
             this.CBExperienta.TabIndex = 31;
             // 
             // CBMaterii
@@ -606,7 +609,7 @@
             this.CBMaterii.Location = new System.Drawing.Point(266, 45);
             this.CBMaterii.Margin = new System.Windows.Forms.Padding(0);
             this.CBMaterii.Name = "CBMaterii";
-            this.CBMaterii.Size = new System.Drawing.Size(156, 29);
+            this.CBMaterii.Size = new System.Drawing.Size(156, 36);
             this.CBMaterii.TabIndex = 30;
             // 
             // TBEmail
@@ -752,12 +755,13 @@
             // 
             // Profesori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(978, 594);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Nirmala UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1000, 700);
             this.MinimumSize = new System.Drawing.Size(900, 620);
             this.Name = "Profesori";
@@ -800,7 +804,7 @@
         private System.Windows.Forms.TextBox TBAdresa;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Label LElev;
+        private System.Windows.Forms.Label LProf;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Button BActualizare;

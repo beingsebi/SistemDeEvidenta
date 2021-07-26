@@ -15,12 +15,12 @@ namespace SistemDeEvidenta
 {
     public partial class Elevi : Form
     {
-        public static string CONSTRING = "Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True";
+        public  static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
         public Elevi()
         {
             InitializeComponent();
         }
-        SqlConnection con = new SqlConnection(CONSTRING);
+        readonly SqlConnection con = new SqlConnection(CONSTRING);
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -270,34 +270,34 @@ namespace SistemDeEvidenta
                 string oras = CBOras.Text;
                 cmd.Parameters.AddWithValue("@oras", oras);
 
-                int idjudet = -1;
                 try
                 {
+                    int idjudet = -1;
                     idjudet = GetIdJudet();
+                    cmd.Parameters.AddWithValue("@idjud", idjudet);
                 }
                 catch (Exception es)
                 {
                     MessageBox.Show(es.ToString());
                     return;
                 }
-                cmd.Parameters.AddWithValue("@idjud", idjudet);
 
-                int idoras = -1;
                 try
                 {
+                    int idoras = -1;
                     idoras = GetIdOras();
+                    cmd.Parameters.AddWithValue("@idoras", idoras);
                 }
                 catch (Exception es)
                 {
                     MessageBox.Show(es.ToString());
                     return;
                 }
-                cmd.Parameters.AddWithValue("@idoras", idoras);
                 cmd.ExecuteNonQuery();
                 con.Close();
                 MessageBox.Show("Adaugare reusita.", "OK", MessageBoxButtons.OK);
-                BDate_Click(this, EventArgs.Empty);
                 BGolire_Click(this, EventArgs.Empty);
+                BDate_Click(this, EventArgs.Empty);
             }
             catch (Exception ee)
             {
@@ -390,7 +390,7 @@ namespace SistemDeEvidenta
             try
             {
                 int id = Int16.Parse(LElev.Text);
-                DialogResult dr = MessageBox.Show($"Stergeti userul cu id-ul {id}?", "Confirmare", MessageBoxButtons.YesNo);
+                DialogResult dr = MessageBox.Show($"Stergeti elevul cu id-ul {id}?", "Confirmare", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
                     if (con.State != ConnectionState.Open)
@@ -398,7 +398,7 @@ namespace SistemDeEvidenta
                     SqlCommand cmd = new SqlCommand($"delete from elevi where id={id}", con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Stergere reusita");
-                    BCautare_Click(this, EventArgs.Empty);
+                    BDate_Click(this, EventArgs.Empty);
                     con.Close();
                 }
             }

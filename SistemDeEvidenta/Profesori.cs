@@ -15,8 +15,8 @@ namespace SistemDeEvidenta
 {
     public partial class Profesori : Form
     {
-        public static string CONSTRING = "Data Source=DESKTOP-29JAFDS\\SEBISERVER;Initial Catalog=mydb;Integrated Security=True";
-        SqlConnection con = new SqlConnection(CONSTRING);
+        public static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
+        readonly SqlConnection con = new SqlConnection(CONSTRING);
 
         public Profesori()
         {
@@ -30,7 +30,7 @@ namespace SistemDeEvidenta
             TBAdresa.Text = "";
             TBNume.Text = TBPrenume.Text = "";
             DatePickerNastere.Value = DateTime.Now;
-            LElev.Text = "";
+            LProf.Text = "";
             CBExperienta.SelectedIndex = -1;
             try
             {
@@ -164,7 +164,31 @@ namespace SistemDeEvidenta
 
         private void Bstergere_Click(object sender, EventArgs e)
         {
-
+            string text = LProf.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("Nu ati selectat niciun elev.", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            try
+            {
+                int id = Int16.Parse(text);
+                DialogResult dr = MessageBox.Show($"Stergeti profesorul cu id-ul {id}?", "Confirmare", MessageBoxButtons.YesNo);
+                if (dr == DialogResult.Yes)
+                {
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+                    SqlCommand cmd = new SqlCommand($"delete from profesori where id={id}", con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Stergere reusita");
+                    BDate_Click(this, EventArgs.Empty);
+                    con.Close();
+                }
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.ToString());
+            }
         }
         public bool VerifSex()
         {
@@ -327,6 +351,7 @@ namespace SistemDeEvidenta
                 con.Close();
                 MessageBox.Show("Adaugare reusita.", "OK", MessageBoxButtons.OK);
                 BGolire_Click(this, EventArgs.Empty);
+                BDate_Click(this, EventArgs.Empty);
             }
             catch (Exception ee)
             {
@@ -377,9 +402,163 @@ namespace SistemDeEvidenta
             }
         }
 
+        private void BDate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                SqlDataAdapter adp = new SqlDataAdapter($"select id, nume as 'Nume',prenume as 'Prenume',materie as 'Materia',experienta as 'Experienta',nrtlf as 'Nr. de tlf.',email as 'Email',judet as 'Judet',oras as 'Oras',adresa as 'Adresa'" +
+                    $",sex as 'Sex',dnastere as 'Data de nastere' from profesori", con);
+                System.Data.DataTable tabel = new System.Data.DataTable();
+                adp.Fill(tabel);
+                con.Close();
+                DGVCriteriu.DataSource = tabel;
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
+
         private void DGVCriteriu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            int ind = e.RowIndex;
+            if (ind < 0) return;
+            LProf.Text = DGVCriteriu.Rows[ind].Cells[0].Value.ToString();
 
+            bool valsex = (bool)DGVCriteriu.Rows[ind].Cells[10].Value;
+            if (valsex)
+            {
+                RBMasc.Checked = true;
+                RBFem.Checked = false;
+            }
+            else
+            {
+                RBMasc.Checked = false;
+                RBFem.Checked = true;
+            }
+
+            TBNume.Text = DGVCriteriu.Rows[ind].Cells[1].Value.ToString();
+            TBPrenume.Text = DGVCriteriu.Rows[ind].Cells[2].Value.ToString();
+            TBEmail.Text = DGVCriteriu.Rows[ind].Cells[6].Value.ToString();
+            TBTlf.Text = DGVCriteriu.Rows[ind].Cells[5].Value.ToString();
+            TBAdresa.Text = DGVCriteriu.Rows[ind].Cells[9].Value.ToString();
+            DatePickerNastere.Value = Convert.ToDateTime(DGVCriteriu.Rows[ind].Cells[11].Value);
+            CBJudet.SelectedIndex = CBJudet.FindStringExact(DGVCriteriu.Rows[ind].Cells[7].Value.ToString());
+            CBJudet_SelectionChangeCommitted(this, EventArgs.Empty);
+            CBOras.SelectedIndex = CBOras.FindStringExact(DGVCriteriu.Rows[ind].Cells[8].Value.ToString());
+            CBMaterii.SelectedIndex = CBMaterii.FindStringExact(DGVCriteriu.Rows[ind].Cells[3].Value.ToString());
+            CBExperienta.SelectedIndex = CBExperienta.FindStringExact(DGVCriteriu.Rows[ind].Cells[4].Value.ToString());
+
+        }
+
+        private void BActualizare_Click(object sender, EventArgs e)
+        {
+            string text = LProf.Text;
+            if (string.IsNullOrEmpty(text))
+            {
+                MessageBox.Show("Nu ati selectat niciun elev.", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            bool ok = ValidareDate();
+            if (!ok) return;
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                string sqr = "update profesori set " +
+                    "experienta=@experienta," +
+                    "sex=@sex," +
+                    "nume=@nume," +
+                    "prenume=@prenume," +
+                    "email=@email," +
+                    "nrtlf=@nrtlf," +
+                    "adresa=@adresa," +
+                    "dnastere=@datanast," +
+                    "materie=@materie," +
+                    "judet=@judet," +
+                    "idjudet=@idjud," +
+                    "oras=@oras," +
+                    "idoras=@idoras" +
+                    " where id=@id";
+
+                SqlCommand cmd;
+                try
+                {
+                    cmd = new SqlCommand(sqr, con);
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.ToString());
+                    return;
+                }
+                string exp = CBExperienta.Text;
+                cmd.Parameters.AddWithValue("@experienta", exp);
+
+                bool sex;
+                if (RBMasc.Checked == true)
+                    sex = true;
+                else sex = false;
+                cmd.Parameters.AddWithValue("@sex", sex);
+
+                string nume = TBNume.Text;
+                cmd.Parameters.AddWithValue("@nume", nume);
+
+                string prenume = TBPrenume.Text;
+                cmd.Parameters.AddWithValue("@prenume", prenume);
+
+                string email = TBEmail.Text;
+                cmd.Parameters.AddWithValue("@email", email);
+
+                string nrtlf = TBTlf.Text;
+                cmd.Parameters.AddWithValue("@nrtlf", nrtlf);
+
+                string adresa = TBAdresa.Text;
+                cmd.Parameters.AddWithValue("@adresa", adresa);
+
+                string dnast = DatePickerNastere.Value.ToString("MM-dd-yyyy");
+                cmd.Parameters.AddWithValue("@datanast", dnast);
+
+                string materia = CBMaterii.Text;
+                cmd.Parameters.AddWithValue("@materie", materia);
+
+                string judet = CBJudet.Text;
+                cmd.Parameters.AddWithValue("@judet", judet);
+                string oras = CBOras.Text;
+                cmd.Parameters.AddWithValue("@oras", oras);
+
+                cmd.Parameters.AddWithValue("@id", Int16.Parse(LProf.Text));
+                try
+                {
+                    int idjudet = GetIdJudet();
+                    cmd.Parameters.AddWithValue("@idjud", idjudet);
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.ToString());
+                    return;
+                }
+
+                try
+                {
+                    int idoras = idoras = GetIdOras();
+                    cmd.Parameters.AddWithValue("@idoras", idoras);
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.ToString());
+                    return;
+                }
+                cmd.ExecuteNonQuery();
+                con.Close();
+                MessageBox.Show("Actualizare reusita.", "OK", MessageBoxButtons.OK);
+                BDate_Click(this, EventArgs.Empty);
+            }
+            catch (Exception es)
+            {
+                MessageBox.Show(es.ToString());
+            }
         }
     }
 }
