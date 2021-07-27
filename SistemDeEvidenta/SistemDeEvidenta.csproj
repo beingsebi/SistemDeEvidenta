@@ -111,6 +111,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ClasaValidareDate.cs" />
+    <Compile Include="taxe.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="taxe.Designer.cs">
+      <DependentUpon>taxe.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Elevi.resx">
       <DependentUpon>Elevi.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,6 +139,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="taxe.resx">
+      <DependentUpon>taxe.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>

@@ -31,5 +31,12 @@ namespace SistemDeEvidenta
             Profesori form2 = new Profesori();
             form2.Show();
         }
+
+        private void BTaxa_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Taxe form2 = new Taxe();
+            form2.Show();
+        }
     }
 }

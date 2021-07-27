@@ -389,8 +389,7 @@ namespace SistemDeEvidenta
                 }
 
                 SqlDataAdapter adp = new SqlDataAdapter($"select id, nume as 'Nume',prenume as 'Prenume',materie as 'Materie',nrtlf as 'Nr. de tlf.',email as 'Email',judet as 'Judet',oras as 'Oras',adresa as 'Adresa'" +
-                    $",sex as 'Sex',dnastere as 'Data de nastere',experienta as 'Experienta' from profesori where {mmap[CBCriteriu.Text]}=@val", con);
-                adp.SelectCommand.Parameters.AddWithValue("@val", TBCriteriu.Text);
+                    $",sex as 'Sex',dnastere as 'Data de nastere',experienta as 'Experienta' from profesori where {mmap[CBCriteriu.Text]} like '%"+ TBCriteriu.Text+"%'", con);
                 System.Data.DataTable tabel = new System.Data.DataTable();
                 adp.Fill(tabel);
                 con.Close();

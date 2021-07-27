@@ -104,9 +104,10 @@
             this.BTaxa.Size = new System.Drawing.Size(268, 50);
             this.BTaxa.TabIndex = 2;
             this.BTaxa.TabStop = false;
-            this.BTaxa.Text = "Taxa";
+            this.BTaxa.Text = "Taxe";
             this.BTaxa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BTaxa.UseVisualStyleBackColor = false;
+            this.BTaxa.Click += new System.EventHandler(this.BTaxa_Click);
             // 
             // BProfesori
             // 

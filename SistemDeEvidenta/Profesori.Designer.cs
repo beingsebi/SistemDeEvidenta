@@ -765,6 +765,7 @@
             this.MaximumSize = new System.Drawing.Size(1000, 700);
             this.MinimumSize = new System.Drawing.Size(900, 620);
             this.Name = "Profesori";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Profesori";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Profesori_FormClosing);
             this.Load += new System.EventHandler(this.Profesori_Load);

@@ -32,12 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
             this.CBCriteriu = new System.Windows.Forms.ComboBox();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.TBCriteriu = new System.Windows.Forms.TextBox();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.BCautare = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.DGVCriteriu = new System.Windows.Forms.DataGridView();
@@ -77,18 +73,20 @@
             this.Bstergere = new System.Windows.Forms.Button();
             this.BAdaugare = new System.Windows.Forms.Button();
             this.BActualizare = new System.Windows.Forms.Button();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCriteriu)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -132,7 +130,6 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel3.Location = new System.Drawing.Point(0, 489);
@@ -143,6 +140,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel5.Location = new System.Drawing.Point(550, 0);
@@ -150,28 +148,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 112);
             this.panel5.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.panel9);
-            this.panel6.Controls.Add(this.panel8);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 112);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.CBCriteriu);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(0, 25);
-            this.panel9.Margin = new System.Windows.Forms.Padding(0);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(200, 22);
-            this.panel9.TabIndex = 0;
             // 
             // CBCriteriu
             // 
@@ -197,37 +173,17 @@
             this.CBCriteriu.TabIndex = 0;
             this.CBCriteriu.TabStop = false;
             // 
-            // panel8
-            // 
-            this.panel8.Controls.Add(this.TBCriteriu);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 47);
-            this.panel8.Margin = new System.Windows.Forms.Padding(0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(200, 65);
-            this.panel8.TabIndex = 2;
-            // 
             // TBCriteriu
             // 
             this.TBCriteriu.AccessibleDescription = "TBCriteriu";
-            this.TBCriteriu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TBCriteriu.Location = new System.Drawing.Point(0, 0);
+            this.TBCriteriu.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.TBCriteriu.Location = new System.Drawing.Point(0, 20);
             this.TBCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.TBCriteriu.Multiline = true;
             this.TBCriteriu.Name = "TBCriteriu";
-            this.TBCriteriu.Size = new System.Drawing.Size(200, 65);
+            this.TBCriteriu.Size = new System.Drawing.Size(200, 60);
             this.TBCriteriu.TabIndex = 0;
             this.TBCriteriu.TabStop = false;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.BCautare);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 25);
-            this.panel7.TabIndex = 1;
             // 
             // BCautare
             // 
@@ -238,7 +194,7 @@
             this.BCautare.Location = new System.Drawing.Point(0, 0);
             this.BCautare.Margin = new System.Windows.Forms.Padding(0);
             this.BCautare.Name = "BCautare";
-            this.BCautare.Size = new System.Drawing.Size(200, 25);
+            this.BCautare.Size = new System.Drawing.Size(200, 32);
             this.BCautare.TabIndex = 0;
             this.BCautare.TabStop = false;
             this.BCautare.Text = "Cautare";
@@ -248,7 +204,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel4.Controls.Add(this.DGVCriteriu);
+            this.panel4.Controls.Add(this.panel12);
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Margin = new System.Windows.Forms.Padding(0);
@@ -260,10 +217,8 @@
             // 
             this.DGVCriteriu.AllowUserToAddRows = false;
             this.DGVCriteriu.AllowUserToDeleteRows = false;
-            this.DGVCriteriu.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.DGVCriteriu.ColumnHeadersHeight = 34;
+            this.DGVCriteriu.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DGVCriteriu.Location = new System.Drawing.Point(0, 0);
             this.DGVCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.DGVCriteriu.Name = "DGVCriteriu";
@@ -282,6 +237,7 @@
             this.BBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BBack.Location = new System.Drawing.Point(0, 0);
+            this.BBack.Margin = new System.Windows.Forms.Padding(0);
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(53, 43);
             this.BBack.TabIndex = 28;
@@ -746,6 +702,37 @@
             this.BActualizare.UseVisualStyleBackColor = false;
             this.BActualizare.Click += new System.EventHandler(this.BActualizare_Click);
             // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.DGVCriteriu);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Margin = new System.Windows.Forms.Padding(0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(550, 112);
+            this.panel12.TabIndex = 0;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.CBCriteriu);
+            this.panel6.Controls.Add(this.TBCriteriu);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 32);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 80);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.BCautare);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 32);
+            this.panel7.TabIndex = 1;
+            // 
             // Elevi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -756,7 +743,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximumSize = new System.Drawing.Size(1000, 700);
-            this.MinimumSize = new System.Drawing.Size(850, 580);
+            this.MinimumSize = new System.Drawing.Size(900, 620);
             this.Name = "Elevi";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "Elevi";
@@ -766,16 +753,15 @@
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            this.panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVCriteriu)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -819,16 +805,15 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button BCautare;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView DGVCriteriu;
         private System.Windows.Forms.TextBox TBCriteriu;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.ComboBox CBCriteriu;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Label LElev;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel panel6;
     }
 }

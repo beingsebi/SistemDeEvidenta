@@ -17,11 +17,11 @@ namespace SistemDeEvidenta
     {
         public  static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
         //aduag asta aici ca sa fie
+        readonly SqlConnection con = new SqlConnection(CONSTRING);
         public Elevi()
         {
             InitializeComponent();
         }
-        readonly SqlConnection con = new SqlConnection(CONSTRING);
         private void BBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -334,9 +334,7 @@ namespace SistemDeEvidenta
                 }
 
                 SqlDataAdapter adp = new SqlDataAdapter($"select id, nume as 'Nume',prenume as 'Prenume',clasa as 'Clasa',nrtlf as 'Nr. de tlf.',email as 'Email',judet as 'Judet',oras as 'Oras',adresa as 'Adresa'" +
-                    $",sex as 'Sex',dnastere as 'Data de nastere',dinregistrare as 'Data de inregistrare' from elevi where {mmap[CBCriteriu.Text]}=@val", con);
-
-                adp.SelectCommand.Parameters.AddWithValue("@val", TBCriteriu.Text);
+                    $",sex as 'Sex',dnastere as 'Data de nastere',dinregistrare as 'Data de inregistrare' from elevi where {mmap[CBCriteriu.Text]} like '%"+ TBCriteriu.Text+"%'", con);
                 System.Data.DataTable tabel = new System.Data.DataTable();
                 adp.Fill(tabel);
                 con.Close();
