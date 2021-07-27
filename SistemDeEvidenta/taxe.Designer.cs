@@ -49,6 +49,13 @@ namespace SistemDeEvidenta
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.BAnPlata = new System.Windows.Forms.Button();
+            this.BPlata = new System.Windows.Forms.Button();
+            this.TBPlata = new System.Windows.Forms.TextBox();
+            this.LTaxa = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.DGVTaxe = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -56,10 +63,7 @@ namespace SistemDeEvidenta
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BBack = new System.Windows.Forms.Button();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.DGVTaxe = new System.Windows.Forms.DataGridView();
-            this.label4 = new System.Windows.Forms.Label();
-            this.LTaxa = new System.Windows.Forms.Label();
+            this.BShow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -74,11 +78,12 @@ namespace SistemDeEvidenta
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
+            this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTaxe)).BeginInit();
+            this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel18.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTaxe)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -117,10 +122,10 @@ namespace SistemDeEvidenta
             // 
             this.panel12.Controls.Add(this.panel13);
             this.panel12.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel12.Location = new System.Drawing.Point(0, 1);
+            this.panel12.Location = new System.Drawing.Point(0, 0);
             this.panel12.Margin = new System.Windows.Forms.Padding(0);
             this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(834, 120);
+            this.panel12.Size = new System.Drawing.Size(834, 121);
             this.panel12.TabIndex = 30;
             // 
             // panel13
@@ -132,7 +137,7 @@ namespace SistemDeEvidenta
             this.panel13.Location = new System.Drawing.Point(0, 0);
             this.panel13.Margin = new System.Windows.Forms.Padding(0);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(834, 120);
+            this.panel13.Size = new System.Drawing.Size(834, 121);
             this.panel13.TabIndex = 0;
             // 
             // panel14
@@ -142,7 +147,7 @@ namespace SistemDeEvidenta
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Margin = new System.Windows.Forms.Padding(0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(634, 120);
+            this.panel14.Size = new System.Drawing.Size(569, 121);
             this.panel14.TabIndex = 0;
             // 
             // DGVCriteriu
@@ -157,7 +162,7 @@ namespace SistemDeEvidenta
             this.DGVCriteriu.ReadOnly = true;
             this.DGVCriteriu.RowHeadersWidth = 62;
             this.DGVCriteriu.RowTemplate.Height = 28;
-            this.DGVCriteriu.Size = new System.Drawing.Size(634, 120);
+            this.DGVCriteriu.Size = new System.Drawing.Size(569, 121);
             this.DGVCriteriu.TabIndex = 0;
             this.DGVCriteriu.TabStop = false;
             this.DGVCriteriu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCriteriu_CellDoubleClick);
@@ -167,10 +172,10 @@ namespace SistemDeEvidenta
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.panel17);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel15.Location = new System.Drawing.Point(634, 0);
+            this.panel15.Location = new System.Drawing.Point(569, 0);
             this.panel15.Margin = new System.Windows.Forms.Padding(0);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(200, 120);
+            this.panel15.Size = new System.Drawing.Size(265, 121);
             this.panel15.TabIndex = 1;
             // 
             // panel16
@@ -180,7 +185,7 @@ namespace SistemDeEvidenta
             this.panel16.Location = new System.Drawing.Point(0, 0);
             this.panel16.Margin = new System.Windows.Forms.Padding(0);
             this.panel16.Name = "panel16";
-            this.panel16.Size = new System.Drawing.Size(200, 40);
+            this.panel16.Size = new System.Drawing.Size(265, 41);
             this.panel16.TabIndex = 1;
             // 
             // BCautare
@@ -192,7 +197,7 @@ namespace SistemDeEvidenta
             this.BCautare.Location = new System.Drawing.Point(0, 0);
             this.BCautare.Margin = new System.Windows.Forms.Padding(0);
             this.BCautare.Name = "BCautare";
-            this.BCautare.Size = new System.Drawing.Size(200, 40);
+            this.BCautare.Size = new System.Drawing.Size(265, 41);
             this.BCautare.TabIndex = 0;
             this.BCautare.TabStop = false;
             this.BCautare.Text = "Cautare";
@@ -204,10 +209,10 @@ namespace SistemDeEvidenta
             this.panel17.Controls.Add(this.CBCriteriu);
             this.panel17.Controls.Add(this.TBCriteriu);
             this.panel17.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel17.Location = new System.Drawing.Point(0, 40);
+            this.panel17.Location = new System.Drawing.Point(0, 41);
             this.panel17.Margin = new System.Windows.Forms.Padding(0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(200, 80);
+            this.panel17.Size = new System.Drawing.Size(265, 80);
             this.panel17.TabIndex = 0;
             // 
             // CBCriteriu
@@ -230,7 +235,7 @@ namespace SistemDeEvidenta
             this.CBCriteriu.Location = new System.Drawing.Point(0, 0);
             this.CBCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.CBCriteriu.Name = "CBCriteriu";
-            this.CBCriteriu.Size = new System.Drawing.Size(200, 29);
+            this.CBCriteriu.Size = new System.Drawing.Size(265, 29);
             this.CBCriteriu.TabIndex = 0;
             this.CBCriteriu.TabStop = false;
             // 
@@ -242,7 +247,7 @@ namespace SistemDeEvidenta
             this.TBCriteriu.Margin = new System.Windows.Forms.Padding(0);
             this.TBCriteriu.Multiline = true;
             this.TBCriteriu.Name = "TBCriteriu";
-            this.TBCriteriu.Size = new System.Drawing.Size(200, 60);
+            this.TBCriteriu.Size = new System.Drawing.Size(265, 60);
             this.TBCriteriu.TabIndex = 0;
             this.TBCriteriu.TabStop = false;
             // 
@@ -309,25 +314,119 @@ namespace SistemDeEvidenta
             // 
             this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel6.BackColor = System.Drawing.Color.Moccasin;
+            this.panel6.Controls.Add(this.BAnPlata);
+            this.panel6.Controls.Add(this.BPlata);
+            this.panel6.Controls.Add(this.TBPlata);
             this.panel6.Controls.Add(this.LTaxa);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Controls.Add(this.panel18);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(450, 0);
+            this.panel6.Location = new System.Drawing.Point(569, 0);
             this.panel6.Margin = new System.Windows.Forms.Padding(0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(528, 424);
+            this.panel6.Size = new System.Drawing.Size(409, 424);
             this.panel6.TabIndex = 1;
+            // 
+            // BAnPlata
+            // 
+            this.BAnPlata.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BAnPlata.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BAnPlata.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BAnPlata.Location = new System.Drawing.Point(210, 236);
+            this.BAnPlata.Margin = new System.Windows.Forms.Padding(0);
+            this.BAnPlata.Name = "BAnPlata";
+            this.BAnPlata.Size = new System.Drawing.Size(175, 50);
+            this.BAnPlata.TabIndex = 37;
+            this.BAnPlata.Text = "Anulare Plata";
+            this.BAnPlata.UseVisualStyleBackColor = true;
+            this.BAnPlata.Click += new System.EventHandler(this.BAnPlata_Click);
+            // 
+            // BPlata
+            // 
+            this.BPlata.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BPlata.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BPlata.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BPlata.Location = new System.Drawing.Point(34, 236);
+            this.BPlata.Margin = new System.Windows.Forms.Padding(0);
+            this.BPlata.Name = "BPlata";
+            this.BPlata.Size = new System.Drawing.Size(175, 50);
+            this.BPlata.TabIndex = 36;
+            this.BPlata.Text = "Platire";
+            this.BPlata.UseVisualStyleBackColor = true;
+            this.BPlata.Click += new System.EventHandler(this.BPlata_Click);
+            // 
+            // TBPlata
+            // 
+            this.TBPlata.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBPlata.Location = new System.Drawing.Point(34, 183);
+            this.TBPlata.Margin = new System.Windows.Forms.Padding(0);
+            this.TBPlata.Multiline = true;
+            this.TBPlata.Name = "TBPlata";
+            this.TBPlata.Size = new System.Drawing.Size(350, 50);
+            this.TBPlata.TabIndex = 35;
+            // 
+            // LTaxa
+            // 
+            this.LTaxa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.LTaxa.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTaxa.Location = new System.Drawing.Point(235, 29);
+            this.LTaxa.Margin = new System.Windows.Forms.Padding(0);
+            this.LTaxa.Name = "LTaxa";
+            this.LTaxa.Size = new System.Drawing.Size(150, 80);
+            this.LTaxa.TabIndex = 34;
+            this.LTaxa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(38, 29);
+            this.label4.Margin = new System.Windows.Forms.Padding(0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 80);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "ID TAXA SELECTATA";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.DGVTaxe);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel18.Location = new System.Drawing.Point(0, 319);
+            this.panel18.Margin = new System.Windows.Forms.Padding(0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(409, 105);
+            this.panel18.TabIndex = 0;
+            // 
+            // DGVTaxe
+            // 
+            this.DGVTaxe.AllowUserToAddRows = false;
+            this.DGVTaxe.AllowUserToDeleteRows = false;
+            this.DGVTaxe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVTaxe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVTaxe.Location = new System.Drawing.Point(0, 0);
+            this.DGVTaxe.Margin = new System.Windows.Forms.Padding(0);
+            this.DGVTaxe.Name = "DGVTaxe";
+            this.DGVTaxe.ReadOnly = true;
+            this.DGVTaxe.RowHeadersWidth = 62;
+            this.DGVTaxe.RowTemplate.Height = 28;
+            this.DGVTaxe.Size = new System.Drawing.Size(409, 105);
+            this.DGVTaxe.TabIndex = 0;
+            this.DGVTaxe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTaxe_CellDoubleClick);
             // 
             // panel5
             // 
             this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel5.BackColor = System.Drawing.Color.PapayaWhip;
+            this.panel5.Controls.Add(this.BShow);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
             this.panel5.Margin = new System.Windows.Forms.Padding(0);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(450, 424);
+            this.panel5.Size = new System.Drawing.Size(569, 424);
             this.panel5.TabIndex = 0;
             // 
             // panel3
@@ -347,9 +446,9 @@ namespace SistemDeEvidenta
             this.panel8.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.panel8.Controls.Add(this.label2);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(450, 0);
+            this.panel8.Location = new System.Drawing.Point(569, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(528, 49);
+            this.panel8.Size = new System.Drawing.Size(409, 49);
             this.panel8.TabIndex = 31;
             // 
             // label2
@@ -360,7 +459,7 @@ namespace SistemDeEvidenta
             this.label2.Location = new System.Drawing.Point(129, 9);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(255, 35);
+            this.label2.Size = new System.Drawing.Size(136, 35);
             this.label2.TabIndex = 31;
             this.label2.Text = "Platire taxa";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -374,7 +473,7 @@ namespace SistemDeEvidenta
             this.panel7.Location = new System.Drawing.Point(0, 0);
             this.panel7.Margin = new System.Windows.Forms.Padding(0);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(450, 49);
+            this.panel7.Size = new System.Drawing.Size(569, 49);
             this.panel7.TabIndex = 30;
             // 
             // label1
@@ -385,7 +484,7 @@ namespace SistemDeEvidenta
             this.label1.Location = new System.Drawing.Point(145, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 35);
+            this.label1.Size = new System.Drawing.Size(296, 35);
             this.label1.TabIndex = 30;
             this.label1.Text = "Adaugare taxa";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -407,54 +506,20 @@ namespace SistemDeEvidenta
             this.BBack.UseVisualStyleBackColor = false;
             this.BBack.Click += new System.EventHandler(this.BBack_Click);
             // 
-            // panel18
+            // BShow
             // 
-            this.panel18.Controls.Add(this.DGVTaxe);
-            this.panel18.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel18.Location = new System.Drawing.Point(0, 319);
-            this.panel18.Margin = new System.Windows.Forms.Padding(0);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(528, 105);
-            this.panel18.TabIndex = 0;
-            // 
-            // DGVTaxe
-            // 
-            this.DGVTaxe.AllowUserToAddRows = false;
-            this.DGVTaxe.AllowUserToDeleteRows = false;
-            this.DGVTaxe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVTaxe.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVTaxe.Location = new System.Drawing.Point(0, 0);
-            this.DGVTaxe.Margin = new System.Windows.Forms.Padding(0);
-            this.DGVTaxe.Name = "DGVTaxe";
-            this.DGVTaxe.ReadOnly = true;
-            this.DGVTaxe.RowHeadersWidth = 62;
-            this.DGVTaxe.RowTemplate.Height = 28;
-            this.DGVTaxe.Size = new System.Drawing.Size(528, 105);
-            this.DGVTaxe.TabIndex = 0;
-            this.DGVTaxe.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVTaxe_CellDoubleClick);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(407, 0);
-            this.label4.Margin = new System.Windows.Forms.Padding(0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 60);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "ID TAXA SELECTAT";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LTaxa
-            // 
-            this.LTaxa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.LTaxa.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTaxa.Location = new System.Drawing.Point(407, 60);
-            this.LTaxa.Margin = new System.Windows.Forms.Padding(0);
-            this.LTaxa.Name = "LTaxa";
-            this.LTaxa.Size = new System.Drawing.Size(121, 60);
-            this.LTaxa.TabIndex = 34;
-            this.LTaxa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BShow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BShow.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BShow.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BShow.Location = new System.Drawing.Point(9, 362);
+            this.BShow.Margin = new System.Windows.Forms.Padding(0);
+            this.BShow.Name = "BShow";
+            this.BShow.Size = new System.Drawing.Size(175, 50);
+            this.BShow.TabIndex = 38;
+            this.BShow.Text = "Vezi toti elevii";
+            this.BShow.UseVisualStyleBackColor = true;
+            this.BShow.Click += new System.EventHandler(this.BShow_Click);
             // 
             // Taxe
             // 
@@ -485,11 +550,13 @@ namespace SistemDeEvidenta
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTaxe)).EndInit();
+            this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
-            this.panel18.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTaxe)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -526,5 +593,9 @@ namespace SistemDeEvidenta
         private System.Windows.Forms.DataGridView DGVTaxe;
         private System.Windows.Forms.Label LTaxa;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BAnPlata;
+        private System.Windows.Forms.Button BPlata;
+        private System.Windows.Forms.TextBox TBPlata;
+        private System.Windows.Forms.Button BShow;
     }
 }

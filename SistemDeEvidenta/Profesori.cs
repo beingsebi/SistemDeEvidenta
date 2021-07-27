@@ -15,7 +15,7 @@ namespace SistemDeEvidenta
 {
     public partial class Profesori : Form
     {
-        public static string CONSTRING = "Data Source=DESKTOP-OJJL6LL\\SEBISERVER;Initial Catalog=logindb;Integrated Security=True";
+        public static string CONSTRING = ClasaConString.ConString();
         readonly SqlConnection con = new SqlConnection(CONSTRING);
 
         public Profesori()

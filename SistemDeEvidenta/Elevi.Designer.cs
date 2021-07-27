@@ -31,12 +31,15 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Elevi));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.DGVCriteriu = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.BCautare = new System.Windows.Forms.Button();
+            this.panel6 = new System.Windows.Forms.Panel();
             this.CBCriteriu = new System.Windows.Forms.ComboBox();
             this.TBCriteriu = new System.Windows.Forms.TextBox();
-            this.BCautare = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.DGVCriteriu = new System.Windows.Forms.DataGridView();
             this.BBack = new System.Windows.Forms.Button();
             this.CBOras = new System.Windows.Forms.ComboBox();
             this.CBJudet = new System.Windows.Forms.ComboBox();
@@ -73,20 +76,17 @@
             this.Bstergere = new System.Windows.Forms.Button();
             this.BAdaugare = new System.Windows.Forms.Button();
             this.BActualizare = new System.Windows.Forms.Button();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
+            this.panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVCriteriu)).BeginInit();
+            this.panel5.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel6.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -138,6 +138,45 @@
             this.panel3.Size = new System.Drawing.Size(750, 112);
             this.panel3.TabIndex = 29;
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel4.Controls.Add(this.panel12);
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(750, 112);
+            this.panel4.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.DGVCriteriu);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Margin = new System.Windows.Forms.Padding(0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(550, 112);
+            this.panel12.TabIndex = 0;
+            // 
+            // DGVCriteriu
+            // 
+            this.DGVCriteriu.AllowUserToAddRows = false;
+            this.DGVCriteriu.AllowUserToDeleteRows = false;
+            this.DGVCriteriu.ColumnHeadersHeight = 34;
+            this.DGVCriteriu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DGVCriteriu.Location = new System.Drawing.Point(0, 0);
+            this.DGVCriteriu.Margin = new System.Windows.Forms.Padding(0);
+            this.DGVCriteriu.Name = "DGVCriteriu";
+            this.DGVCriteriu.ReadOnly = true;
+            this.DGVCriteriu.RowHeadersWidth = 62;
+            this.DGVCriteriu.RowTemplate.Height = 28;
+            this.DGVCriteriu.Size = new System.Drawing.Size(550, 112);
+            this.DGVCriteriu.TabIndex = 0;
+            this.DGVCriteriu.TabStop = false;
+            this.DGVCriteriu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCriteriu_CellDoubleClick);
+            // 
             // panel5
             // 
             this.panel5.Controls.Add(this.panel7);
@@ -148,6 +187,43 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(200, 112);
             this.panel5.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.BCautare);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Margin = new System.Windows.Forms.Padding(0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(200, 32);
+            this.panel7.TabIndex = 1;
+            // 
+            // BCautare
+            // 
+            this.BCautare.BackColor = System.Drawing.Color.DarkKhaki;
+            this.BCautare.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BCautare.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BCautare.ForeColor = System.Drawing.Color.Snow;
+            this.BCautare.Location = new System.Drawing.Point(0, 0);
+            this.BCautare.Margin = new System.Windows.Forms.Padding(0);
+            this.BCautare.Name = "BCautare";
+            this.BCautare.Size = new System.Drawing.Size(200, 32);
+            this.BCautare.TabIndex = 0;
+            this.BCautare.TabStop = false;
+            this.BCautare.Text = "Cautare";
+            this.BCautare.UseVisualStyleBackColor = false;
+            this.BCautare.Click += new System.EventHandler(this.BCautare_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.CBCriteriu);
+            this.panel6.Controls.Add(this.TBCriteriu);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(0, 32);
+            this.panel6.Margin = new System.Windows.Forms.Padding(0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(200, 80);
+            this.panel6.TabIndex = 0;
             // 
             // CBCriteriu
             // 
@@ -184,51 +260,6 @@
             this.TBCriteriu.Size = new System.Drawing.Size(200, 60);
             this.TBCriteriu.TabIndex = 0;
             this.TBCriteriu.TabStop = false;
-            // 
-            // BCautare
-            // 
-            this.BCautare.BackColor = System.Drawing.Color.DarkKhaki;
-            this.BCautare.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BCautare.Font = new System.Drawing.Font("Nirmala UI", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BCautare.ForeColor = System.Drawing.Color.Snow;
-            this.BCautare.Location = new System.Drawing.Point(0, 0);
-            this.BCautare.Margin = new System.Windows.Forms.Padding(0);
-            this.BCautare.Name = "BCautare";
-            this.BCautare.Size = new System.Drawing.Size(200, 32);
-            this.BCautare.TabIndex = 0;
-            this.BCautare.TabStop = false;
-            this.BCautare.Text = "Cautare";
-            this.BCautare.UseVisualStyleBackColor = false;
-            this.BCautare.Click += new System.EventHandler(this.BCautare_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.DarkGoldenrod;
-            this.panel4.Controls.Add(this.panel12);
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(750, 112);
-            this.panel4.TabIndex = 0;
-            // 
-            // DGVCriteriu
-            // 
-            this.DGVCriteriu.AllowUserToAddRows = false;
-            this.DGVCriteriu.AllowUserToDeleteRows = false;
-            this.DGVCriteriu.ColumnHeadersHeight = 34;
-            this.DGVCriteriu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DGVCriteriu.Location = new System.Drawing.Point(0, 0);
-            this.DGVCriteriu.Margin = new System.Windows.Forms.Padding(0);
-            this.DGVCriteriu.Name = "DGVCriteriu";
-            this.DGVCriteriu.ReadOnly = true;
-            this.DGVCriteriu.RowHeadersWidth = 62;
-            this.DGVCriteriu.RowTemplate.Height = 28;
-            this.DGVCriteriu.Size = new System.Drawing.Size(550, 112);
-            this.DGVCriteriu.TabIndex = 0;
-            this.DGVCriteriu.TabStop = false;
-            this.DGVCriteriu.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGVCriteriu_CellDoubleClick);
             // 
             // BBack
             // 
@@ -702,37 +733,6 @@
             this.BActualizare.UseVisualStyleBackColor = false;
             this.BActualizare.Click += new System.EventHandler(this.BActualizare_Click);
             // 
-            // panel12
-            // 
-            this.panel12.Controls.Add(this.DGVCriteriu);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel12.Location = new System.Drawing.Point(0, 0);
-            this.panel12.Margin = new System.Windows.Forms.Padding(0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(550, 112);
-            this.panel12.TabIndex = 0;
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.CBCriteriu);
-            this.panel6.Controls.Add(this.TBCriteriu);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(0, 32);
-            this.panel6.Margin = new System.Windows.Forms.Padding(0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(200, 80);
-            this.panel6.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.BCautare);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Margin = new System.Windows.Forms.Padding(0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(200, 32);
-            this.panel7.TabIndex = 1;
-            // 
             // Elevi
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -752,16 +752,16 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVCriteriu)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel7.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
-            this.panel12.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
