@@ -270,7 +270,7 @@
             this.BBack.Location = new System.Drawing.Point(0, 0);
             this.BBack.Margin = new System.Windows.Forms.Padding(0);
             this.BBack.Name = "BBack";
-            this.BBack.Size = new System.Drawing.Size(53, 43);
+            this.BBack.Size = new System.Drawing.Size(46, 46);
             this.BBack.TabIndex = 28;
             this.BBack.TabStop = false;
             this.BBack.UseVisualStyleBackColor = false;

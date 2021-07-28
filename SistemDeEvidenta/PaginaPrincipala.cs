@@ -45,5 +45,12 @@ namespace SistemDeEvidenta
             Rapoarte form2 = new Rapoarte();
             form2.Show();
         }
+
+        private void BAdmin_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin form2 = new Admin();
+            form2.Show();
+        }
     }
 }

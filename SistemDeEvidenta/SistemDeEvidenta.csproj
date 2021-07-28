@@ -79,6 +79,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin.Designer.cs">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClasaConString.cs" />
     <Compile Include="Elevi.cs">
       <SubType>Form</SubType>
@@ -113,6 +119,9 @@
     <Compile Include="taxe.Designer.cs">
       <DependentUpon>taxe.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin.resx">
+      <DependentUpon>Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Elevi.resx">
       <DependentUpon>Elevi.cs</DependentUpon>
     </EmbeddedResource>

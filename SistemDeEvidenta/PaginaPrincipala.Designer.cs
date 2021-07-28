@@ -71,6 +71,7 @@
             this.BAdmin.Text = "Admin";
             this.BAdmin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BAdmin.UseVisualStyleBackColor = false;
+            this.BAdmin.Click += new System.EventHandler(this.BAdmin_Click);
             // 
             // BRapoarte
             // 
@@ -170,7 +171,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MaximumSize = new System.Drawing.Size(1000, 600);
+            this.MaximumSize = new System.Drawing.Size(1000, 700);
             this.MinimumSize = new System.Drawing.Size(850, 500);
             this.Name = "FereastraPrincipala";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
