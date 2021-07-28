@@ -89,6 +89,7 @@
             this.BRapoarte.Text = "Rapoarte";
             this.BRapoarte.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BRapoarte.UseVisualStyleBackColor = false;
+            this.BRapoarte.Click += new System.EventHandler(this.BRapoarte_Click);
             // 
             // BTaxa
             // 

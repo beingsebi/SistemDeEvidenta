@@ -38,5 +38,12 @@ namespace SistemDeEvidenta
             Taxe form2 = new Taxe();
             form2.Show();
         }
+
+        private void BRapoarte_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Rapoarte form2 = new Rapoarte();
+            form2.Show();
+        }
     }
 }

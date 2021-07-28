@@ -36,7 +36,14 @@ namespace SistemDeEvidenta
             else
                 Application.OpenForms["FereastraPrincipala"].Close();
         }
-
+        public void PuneTaxe()
+        {
+            int ind = Int32.Parse(LElev.Text);
+            SqlDataAdapter adp = new SqlDataAdapter($"SELECT taxe.id as 'ID', elevi.nume as 'Nume', elevi.prenume as 'Prenume', taxe.valoare as 'Taxa', taxe.platit as 'Platit' FROM elevi LEFT JOIN taxe ON taxe.idelev = {ind} WHERE elevi.id = {ind}; ", con);
+            System.Data.DataTable tabel = new System.Data.DataTable();
+            adp.Fill(tabel);
+            DGVTaxe.DataSource = tabel;
+        }
         private void BCautare_Click(object sender, EventArgs e)
         {
             var mmap = new Dictionary<string, string>(){
@@ -85,12 +92,8 @@ namespace SistemDeEvidenta
             {
                 if (con.State != ConnectionState.Open)
                     con.Open();
-                ind = Int16.Parse(LElev.Text);
-                SqlDataAdapter adp = new SqlDataAdapter($"SELECT taxe.id, elevi.nume, elevi.prenume, taxe.valoare, taxe.platit FROM elevi LEFT JOIN taxe ON taxe.idelev = {ind} WHERE elevi.id = {ind}; ", con);
-                System.Data.DataTable tabel = new System.Data.DataTable();
-                adp.Fill(tabel);
+                PuneTaxe();
                 con.Close();
-                DGVTaxe.DataSource = tabel;
             }
             catch (Exception ee)
             {
@@ -137,12 +140,8 @@ namespace SistemDeEvidenta
                 SqlCommand cmd = new SqlCommand($"update taxe set platit = {nval} where id = {ind}", con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Tranzactie inregistrata", "OK", MessageBoxButtons.OK);
-                ind = Int16.Parse(LElev.Text);
-                SqlDataAdapter adp = new SqlDataAdapter($"SELECT taxe.id, elevi.nume, elevi.prenume, taxe.valoare, taxe.platit FROM elevi LEFT JOIN taxe ON taxe.idelev = {ind} WHERE elevi.id = {ind}; ", con);
-                System.Data.DataTable tabel = new System.Data.DataTable();
-                adp.Fill(tabel);
+                PuneTaxe();
                 con.Close();
-                DGVTaxe.DataSource = tabel;
             }
             catch (Exception ee)
             {
@@ -224,5 +223,73 @@ namespace SistemDeEvidenta
             }
         }
 
+        private void Taxe_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                listView1.Columns.Add("ID",30,HorizontalAlignment.Center);
+                listView1.Columns.Add("Denumire",180,HorizontalAlignment.Center);
+                listView1.Columns.Add("Descriere",332,HorizontalAlignment.Center);
+                listView1.View = View.Details;
+                SqlCommand cmd = new SqlCommand("select * from tiptaxe", con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "test");
+                DataTable dt = ds.Tables["test"];
+                for(int i=0;i<dt.Rows.Count;i++)
+                {
+                    listView1.Items.Add(dt.Rows[i].ItemArray[0].ToString());
+                    listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[1].ToString());
+                    listView1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[2].ToString());
+                }
+                con.Close();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
+
+        private void BATaxa_Click(object sender, EventArgs e)
+        {
+            if(listView1.SelectedIndices.Count!=1)
+            {
+                MessageBox.Show("Nu ati selectat o taxa", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            if(!ValidNr(LElev.Text))
+            {
+                MessageBox.Show("Nu ati selectat un elev", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            if (!ValidNr(TBTaxa.Text))
+            {
+                MessageBox.Show("Valoare taxa invalida", "Eroare", MessageBoxButtons.OK);
+                return;
+            }
+            DialogResult dr =  MessageBox.Show($"Adaugati o taxa in valoare de {TBTaxa.Text} lei elevului cu id-ul {LElev.Text}", "Confirmare", MessageBoxButtons.YesNo);
+            if(dr==DialogResult.Yes)
+            {
+                try
+                {
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+                    SqlCommand cmd = new SqlCommand("insert into taxe values (@idelev, @idtaxa ,@valoare, 0)", con);
+                    cmd.Parameters.AddWithValue("@idelev", Int16.Parse(LElev.Text));
+                    int idtax = Int32.Parse(listView1.SelectedItems[0].Text); 
+                    cmd.Parameters.AddWithValue("@idtaxa", idtax);
+                    cmd.Parameters.AddWithValue("@valoare", Int32.Parse(TBTaxa.Text));
+                    cmd.ExecuteNonQuery();
+                    PuneTaxe();
+                    con.Close();
+                }
+                catch (Exception ee)
+                {
+                    MessageBox.Show(ee.ToString());
+                }
+            }
+        }
     }
 }

@@ -525,6 +525,7 @@
             this.BBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.BBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BBack.Location = new System.Drawing.Point(0, 0);
+            this.BBack.Margin = new System.Windows.Forms.Padding(0);
             this.BBack.Name = "BBack";
             this.BBack.Size = new System.Drawing.Size(46, 46);
             this.BBack.TabIndex = 28;
@@ -755,8 +756,7 @@
             // 
             // Profesori
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(978, 594);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -766,6 +766,7 @@
             this.MinimumSize = new System.Drawing.Size(900, 620);
             this.Name = "Profesori";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Profesori";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Profesori_FormClosing);
             this.Load += new System.EventHandler(this.Profesori_Load);

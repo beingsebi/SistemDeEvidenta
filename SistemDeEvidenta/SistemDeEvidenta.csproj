@@ -80,27 +80,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClasaConString.cs" />
-    <Compile Include="DataSet1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Elevi.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Elevi.Designer.cs">
       <DependentUpon>Elevi.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Rapoarte.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="logindbDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>logindbDataSet.xsd</DependentUpon>
+    <Compile Include="Rapoarte.Designer.cs">
+      <DependentUpon>Rapoarte.cs</DependentUpon>
     </Compile>
     <Compile Include="Profesori.cs">
       <SubType>Form</SubType>
@@ -126,8 +116,8 @@
     <EmbeddedResource Include="Elevi.resx">
       <DependentUpon>Elevi.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Rapoarte.resx">
+      <DependentUpon>Rapoarte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Profesori.resx">
       <DependentUpon>Profesori.cs</DependentUpon>
@@ -144,32 +134,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="taxe.resx">
       <DependentUpon>taxe.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSet1.xsc">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="DataSet1.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSet1.xss">
-      <DependentUpon>DataSet1.xsd</DependentUpon>
-    </None>
-    <None Include="logindbDataSet.xsc">
-      <DependentUpon>logindbDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="logindbDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>logindbDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="logindbDataSet.xss">
-      <DependentUpon>logindbDataSet.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -180,7 +147,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="SistemDeEvidenta_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

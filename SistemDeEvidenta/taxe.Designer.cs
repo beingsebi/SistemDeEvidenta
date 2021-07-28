@@ -57,13 +57,16 @@ namespace SistemDeEvidenta
             this.panel18 = new System.Windows.Forms.Panel();
             this.DGVTaxe = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.BATaxa = new System.Windows.Forms.Button();
+            this.TBTaxa = new System.Windows.Forms.TextBox();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.BShow = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.BBack = new System.Windows.Forms.Button();
-            this.BShow = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -372,7 +375,7 @@ namespace SistemDeEvidenta
             // 
             this.LTaxa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LTaxa.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTaxa.Location = new System.Drawing.Point(235, 29);
+            this.LTaxa.Location = new System.Drawing.Point(235, 63);
             this.LTaxa.Margin = new System.Windows.Forms.Padding(0);
             this.LTaxa.Name = "LTaxa";
             this.LTaxa.Size = new System.Drawing.Size(150, 80);
@@ -383,7 +386,7 @@ namespace SistemDeEvidenta
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.Font = new System.Drawing.Font("Nirmala UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(38, 29);
+            this.label4.Location = new System.Drawing.Point(38, 63);
             this.label4.Margin = new System.Windows.Forms.Padding(0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(171, 80);
@@ -421,6 +424,9 @@ namespace SistemDeEvidenta
             // 
             this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel5.BackColor = System.Drawing.Color.PapayaWhip;
+            this.panel5.Controls.Add(this.BATaxa);
+            this.panel5.Controls.Add(this.TBTaxa);
+            this.panel5.Controls.Add(this.listView1);
             this.panel5.Controls.Add(this.BShow);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel5.Location = new System.Drawing.Point(0, 0);
@@ -428,6 +434,62 @@ namespace SistemDeEvidenta
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(569, 424);
             this.panel5.TabIndex = 0;
+            // 
+            // BATaxa
+            // 
+            this.BATaxa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.BATaxa.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BATaxa.Font = new System.Drawing.Font("Nirmala UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BATaxa.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BATaxa.Location = new System.Drawing.Point(208, 341);
+            this.BATaxa.Margin = new System.Windows.Forms.Padding(0);
+            this.BATaxa.Name = "BATaxa";
+            this.BATaxa.Size = new System.Drawing.Size(347, 50);
+            this.BATaxa.TabIndex = 41;
+            this.BATaxa.Text = "Adauga Taxa";
+            this.BATaxa.UseVisualStyleBackColor = true;
+            this.BATaxa.Click += new System.EventHandler(this.BATaxa_Click);
+            // 
+            // TBTaxa
+            // 
+            this.TBTaxa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBTaxa.Location = new System.Drawing.Point(9, 251);
+            this.TBTaxa.Margin = new System.Windows.Forms.Padding(0);
+            this.TBTaxa.Multiline = true;
+            this.TBTaxa.Name = "TBTaxa";
+            this.TBTaxa.Size = new System.Drawing.Size(546, 50);
+            this.TBTaxa.TabIndex = 40;
+            // 
+            // listView1
+            // 
+            this.listView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.listView1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listView1.FullRowSelect = true;
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(9, 17);
+            this.listView1.Margin = new System.Windows.Forms.Padding(0);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(546, 216);
+            this.listView1.TabIndex = 39;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // BShow
+            // 
+            this.BShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.BShow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BShow.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BShow.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BShow.Location = new System.Drawing.Point(9, 341);
+            this.BShow.Margin = new System.Windows.Forms.Padding(0);
+            this.BShow.Name = "BShow";
+            this.BShow.Size = new System.Drawing.Size(175, 50);
+            this.BShow.TabIndex = 38;
+            this.BShow.Text = "Vezi toti elevii";
+            this.BShow.UseVisualStyleBackColor = true;
+            this.BShow.Click += new System.EventHandler(this.BShow_Click);
             // 
             // panel3
             // 
@@ -506,21 +568,6 @@ namespace SistemDeEvidenta
             this.BBack.UseVisualStyleBackColor = false;
             this.BBack.Click += new System.EventHandler(this.BBack_Click);
             // 
-            // BShow
-            // 
-            this.BShow.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.BShow.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.BShow.Font = new System.Drawing.Font("Nirmala UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BShow.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.BShow.Location = new System.Drawing.Point(9, 362);
-            this.BShow.Margin = new System.Windows.Forms.Padding(0);
-            this.BShow.Name = "BShow";
-            this.BShow.Size = new System.Drawing.Size(175, 50);
-            this.BShow.TabIndex = 38;
-            this.BShow.Text = "Vezi toti elevii";
-            this.BShow.UseVisualStyleBackColor = true;
-            this.BShow.Click += new System.EventHandler(this.BShow_Click);
-            // 
             // Taxe
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -533,8 +580,10 @@ namespace SistemDeEvidenta
             this.MinimumSize = new System.Drawing.Size(900, 620);
             this.Name = "Taxe";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Taxe";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Taxe_FormClosing);
+            this.Load += new System.EventHandler(this.Taxe_Load);
             this.panel1.ResumeLayout(false);
             this.panel10.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
@@ -554,6 +603,7 @@ namespace SistemDeEvidenta
             this.panel18.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DGVTaxe)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
@@ -597,5 +647,8 @@ namespace SistemDeEvidenta
         private System.Windows.Forms.Button BPlata;
         private System.Windows.Forms.TextBox TBPlata;
         private System.Windows.Forms.Button BShow;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox TBTaxa;
+        private System.Windows.Forms.Button BATaxa;
     }
 }
