@@ -93,10 +93,45 @@ namespace SistemDeEvidenta
                 MessageBox.Show(es.ToString());
             }
         }
-
+        public void PuneIstoric()
+        {
+            try
+            {
+                if (con.State != ConnectionState.Open)
+                    con.Open();
+                LV1.BackgroundImage = null;
+                LV1.Columns.Clear();
+                LV1.Items.Clear();
+                LV1.Columns.Add("Nume", 80, HorizontalAlignment.Center);
+                LV1.Columns.Add("Prenume", 80, HorizontalAlignment.Center);
+                LV1.Columns.Add("Email", 120, HorizontalAlignment.Center);
+                LV1.Columns.Add("Taxa", 130, HorizontalAlignment.Center);
+                LV1.Columns.Add("Valoare", 70, HorizontalAlignment.Center);
+                LV1.View = View.Details;
+                SqlCommand cmd = new SqlCommand("select elevi.nume,elevi.prenume,elevi.email,tiptaxe.denumire,valoare from istorictaxe "+
+                    "left join elevi on istorictaxe.idelev = elevi.id "+
+                    "left join tiptaxe on istorictaxe.idtaxa = tiptaxe.id", con);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+                adp.Fill(ds, "test");
+                DataTable dt = ds.Tables["test"];
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    LV1.Items.Add(dt.Rows[i].ItemArray[0].ToString());
+                    for(int j=1;j<=4;j++)
+                             LV1.Items[i].SubItems.Add(dt.Rows[i].ItemArray[j].ToString());
+                }
+                con.Close();
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.ToString());
+            }
+        }
         private void Admin_Load(object sender, EventArgs e)
         {
             PuneTaxe();
+            PuneIstoric();
         }
     }
 }

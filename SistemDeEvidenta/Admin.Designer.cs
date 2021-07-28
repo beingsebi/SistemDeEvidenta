@@ -31,16 +31,18 @@ namespace SistemDeEvidenta
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.LV = new System.Windows.Forms.ListView();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.BAdd = new System.Windows.Forms.Button();
             this.TBDescriere = new System.Windows.Forms.TextBox();
             this.TBDenumire = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.BBack = new System.Windows.Forms.Button();
-            this.BAdd = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.LV = new System.Windows.Forms.ListView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.LV1 = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -48,6 +50,8 @@ namespace SistemDeEvidenta
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.panel1.Controls.Add(this.LV1);
+            this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.LV);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -56,6 +60,31 @@ namespace SistemDeEvidenta
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 594);
             this.panel1.TabIndex = 0;
+            // 
+            // LV
+            // 
+            this.LV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LV.BackgroundImage")));
+            this.LV.BackgroundImageTiled = true;
+            this.LV.GridLines = true;
+            this.LV.HideSelection = false;
+            this.LV.Location = new System.Drawing.Point(459, 85);
+            this.LV.Name = "LV";
+            this.LV.Size = new System.Drawing.Size(489, 203);
+            this.LV.TabIndex = 9;
+            this.LV.UseCompatibleStateImageBehavior = false;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label4.Location = new System.Drawing.Point(632, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 73);
+            this.label4.TabIndex = 8;
+            this.label4.Text = "Taxe";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -73,6 +102,18 @@ namespace SistemDeEvidenta
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(426, 594);
             this.panel2.TabIndex = 1;
+            // 
+            // BAdd
+            // 
+            this.BAdd.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BAdd.Location = new System.Drawing.Point(38, 421);
+            this.BAdd.Margin = new System.Windows.Forms.Padding(0);
+            this.BAdd.Name = "BAdd";
+            this.BAdd.Size = new System.Drawing.Size(340, 55);
+            this.BAdd.TabIndex = 7;
+            this.BAdd.Text = "Adaugare";
+            this.BAdd.UseVisualStyleBackColor = false;
+            this.BAdd.Click += new System.EventHandler(this.BAdd_Click);
             // 
             // TBDescriere
             // 
@@ -138,42 +179,30 @@ namespace SistemDeEvidenta
             this.BBack.UseVisualStyleBackColor = false;
             this.BBack.Click += new System.EventHandler(this.BBack_Click);
             // 
-            // BAdd
+            // label5
             // 
-            this.BAdd.BackColor = System.Drawing.Color.LightSkyBlue;
-            this.BAdd.Location = new System.Drawing.Point(38, 421);
-            this.BAdd.Margin = new System.Windows.Forms.Padding(0);
-            this.BAdd.Name = "BAdd";
-            this.BAdd.Size = new System.Drawing.Size(340, 55);
-            this.BAdd.TabIndex = 7;
-            this.BAdd.Text = "Adaugare";
-            this.BAdd.UseVisualStyleBackColor = false;
-            this.BAdd.Click += new System.EventHandler(this.BAdd_Click);
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.Location = new System.Drawing.Point(632, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 73);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Taxe";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label5.Location = new System.Drawing.Point(632, 294);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(171, 73);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Istoric Taxe";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // LV
+            // LV1
             // 
-            this.LV.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.LV1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.LV.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LV.BackgroundImage")));
-            this.LV.BackgroundImageTiled = true;
-            this.LV.GridLines = true;
-            this.LV.HideSelection = false;
-            this.LV.Location = new System.Drawing.Point(459, 85);
-            this.LV.Name = "LV";
-            this.LV.Size = new System.Drawing.Size(489, 203);
-            this.LV.TabIndex = 9;
-            this.LV.UseCompatibleStateImageBehavior = false;
+            this.LV1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("LV1.BackgroundImage")));
+            this.LV1.BackgroundImageTiled = true;
+            this.LV1.GridLines = true;
+            this.LV1.HideSelection = false;
+            this.LV1.Location = new System.Drawing.Point(459, 361);
+            this.LV1.Name = "LV1";
+            this.LV1.Size = new System.Drawing.Size(489, 203);
+            this.LV1.TabIndex = 11;
+            this.LV1.UseCompatibleStateImageBehavior = false;
             // 
             // Admin
             // 
@@ -210,5 +239,7 @@ namespace SistemDeEvidenta
         private System.Windows.Forms.Button BAdd;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListView LV;
+        private System.Windows.Forms.ListView LV1;
+        private System.Windows.Forms.Label label5;
     }
 }

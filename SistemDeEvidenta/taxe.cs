@@ -39,7 +39,9 @@ namespace SistemDeEvidenta
         public void PuneTaxe()
         {
             int ind = Int32.Parse(LElev.Text);
-            SqlDataAdapter adp = new SqlDataAdapter($"SELECT taxe.id as 'ID', elevi.nume as 'Nume', elevi.prenume as 'Prenume', taxe.valoare as 'Taxa', taxe.platit as 'Platit' FROM elevi LEFT JOIN taxe ON taxe.idelev = {ind} WHERE elevi.id = {ind}; ", con);
+            SqlDataAdapter adp = new SqlDataAdapter("select taxe.id as 'ID', elevi.nume as 'Nume' ,elevi.prenume as 'Prenume' ,tiptaxe.denumire as 'Taxa',valoare as 'Valoare',platit as 'Platit' from taxe "+
+"left join elevi on taxe.idelev = elevi.id "+
+$"left join tiptaxe on taxe.idtaxa = tiptaxe.id where taxe.idelev = { ind }", con);
             System.Data.DataTable tabel = new System.Data.DataTable();
             adp.Fill(tabel);
             DGVTaxe.DataSource = tabel;
@@ -173,7 +175,15 @@ namespace SistemDeEvidenta
             nval = platit - nval;
             AlterTaxa(ind, nval);
         }
-
+        public int GetTipTaxa()
+        {
+            if (con.State != ConnectionState.Open)
+                con.Open();
+            string queryStr = "SELECT idtaxa from taxe where id=" + LTaxa.Text ;
+            SqlCommand cmd = new SqlCommand(queryStr, con);
+            var queryResult = cmd.ExecuteScalar();//Return an object so first check for null
+            return Int32.Parse(queryResult.ToString());
+        }
         private void BPlata_Click(object sender, EventArgs e)
         {
             if(String.IsNullOrEmpty(LTaxa.Text))
@@ -197,10 +207,35 @@ namespace SistemDeEvidenta
             }
             nval += platit;
             AlterTaxa(ind, nval);
+           
             if(nval==valoare)
             {
-                //sterge tranzactie
-                //adauga in alta baza de date pt history
+                try
+                {
+                    int id = Int32.Parse(LTaxa.Text);
+                    int idelev = Int32.Parse(LElev.Text);
+                    //valoare
+                    int idtaxa = GetTipTaxa();
+                    if (con.State != ConnectionState.Open)
+                        con.Open();
+                    SqlCommand cmd = new SqlCommand("insert into istorictaxe values (@id,@idtaxa,@idelev,@valoare)",con);
+                    cmd.Parameters.AddWithValue("@id", id);
+                    cmd.Parameters.AddWithValue("@idtaxa", idtaxa);
+                    cmd.Parameters.AddWithValue("@idelev", idelev);
+                    cmd.Parameters.AddWithValue("@valoare", valoare);
+                    cmd.ExecuteNonQuery();
+                    
+                    SqlCommand ncmd = new SqlCommand("delete from taxe where id =@id", con);
+                    ncmd.Parameters.AddWithValue("@id", id);
+                    ncmd.ExecuteNonQuery();
+                    con.Close();
+                    MessageBox.Show("Taxa a fost platita in totalitate");
+                    PuneTaxe();
+                }
+                catch (Exception es)
+                {
+                    MessageBox.Show(es.ToString());
+                }
             }
         }
 

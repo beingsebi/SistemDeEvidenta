@@ -175,6 +175,7 @@
             this.MinimumSize = new System.Drawing.Size(850, 500);
             this.Name = "FereastraPrincipala";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Sistem Scolar De Inregistrare";
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
